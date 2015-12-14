@@ -1,0 +1,2345 @@
+3.4.13 (Selective Steve)
+6e7c72b4d7170fd6ec79bc49f843db0ca0dc27b7
+o:Sass::Tree::RootNode:@template";z$bootstrap-sass-asset-helper: false !default;
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               #fff !default;
+//** Global text color on `<body>`.
+$text-color:            $gray-dark !default;
+
+//** Global textual link color.
+$link-color:            $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+
+// [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
+// [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
+$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
+
+//** File name for all font files.
+$icon-font-name:          "glyphicons-halflings-regular" !default;
+//** Element ID within SVG icon file.
+$icon-font-svg-id:        "glyphicons_halflingsregular" !default;
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $brand-primary !default;
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base:          4px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px !default;
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding:            8px !default;
+//** Padding for cells in `.table-condensed`.
+$table-condensed-cell-padding:  5px !default;
+
+//** Default background color used for all tables.
+$table-bg:                      transparent !default;
+//** Background color used for `.table-striped`.
+$table-bg-accent:               #f9f9f9 !default;
+//** Background color used for `.table-hover`.
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+//** Border color for table and cell borders.
+$table-border-color:            #ddd !default;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $brand-success !default;
+$btn-success-border:             darken($btn-success-bg, 5%) !default;
+
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $brand-info !default;
+$btn-info-border:                darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-large:        $border-radius-large !default;
+$btn-border-radius-small:        $border-radius-small !default;
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+$input-bg:                       #fff !default;
+//** `<input disabled>` background color
+$input-bg-disabled:              $gray-lighter !default;
+
+//** Text color for `<input>`s
+$input-color:                    $gray !default;
+//** `<input>` border color
+$input-border:                   #ccc !default;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            $border-radius-base !default;
+//** Large `.form-control` border radius
+$input-border-radius-large:      $border-radius-large !default;
+//** Small `.form-control` border radius
+$input-border-radius-small:      $border-radius-small !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             #66afe9 !default;
+
+//** Placeholder text color
+$input-color-placeholder:        #999 !default;
+
+//** Default `.form-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+//** `.form-group` margin
+$form-group-margin-bottom:       15px !default;
+
+$legend-color:                   $gray-dark !default;
+$legend-border-color:            #e5e5e5 !default;
+
+//** Background color for textual input addons
+$input-group-addon-bg:           $gray-lighter !default;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed !default;
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+$dropdown-bg:                    #fff !default;
+//** Dropdown menu `border-color`.
+$dropdown-border:                rgba(0,0,0,.15) !default;
+//** Dropdown menu `border-color` **for IE8**.
+$dropdown-fallback-border:       #ccc !default;
+//** Divider color for between dropdown items.
+$dropdown-divider-bg:            #e5e5e5 !default;
+
+//** Dropdown link text color.
+$dropdown-link-color:            $gray-dark !default;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg:         #f5f5f5 !default;
+
+//** Active dropdown menu item text color.
+$dropdown-link-active-color:     $component-active-color !default;
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg:        $component-active-bg !default;
+
+//** Disabled dropdown menu item background color.
+$dropdown-link-disabled-color:   $gray-light !default;
+
+//** Text color for headers within dropdown menus.
+$dropdown-header-color:          $gray-light !default;
+
+//** Deprecated `$dropdown-caret-color` as of v3.1.0
+$dropdown-caret-color:           #000 !default;
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    50px !default;
+$navbar-margin-bottom:             $line-height-computed !default;
+$navbar-border-radius:             $border-radius-base !default;
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-collapse-max-height:       340px !default;
+
+$navbar-default-color:             #777 !default;
+$navbar-default-bg:                #f8f8f8 !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color:                #777 !default;
+$navbar-default-link-hover-color:          #333 !default;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         #555 !default;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color !default;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-icon-bar-bg:        #888 !default;
+$navbar-default-toggle-border-color:       #ddd !default;
+
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      lighten($gray-light, 15%) !default;
+$navbar-inverse-bg:                         #222 !default;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 lighten($gray-light, 15%) !default;
+$navbar-inverse-link-hover-color:           #fff !default;
+$navbar-inverse-link-hover-bg:              transparent !default;
+$navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
+$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-disabled-color:        #444 !default;
+$navbar-inverse-link-disabled-bg:           transparent !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color:          #fff !default;
+$navbar-inverse-brand-hover-bg:             transparent !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333 !default;
+$navbar-inverse-toggle-icon-bar-bg:         #fff !default;
+$navbar-inverse-toggle-border-color:        #333 !default;
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+$nav-link-padding:                          10px 15px !default;
+$nav-link-hover-bg:                         $gray-lighter !default;
+
+$nav-disabled-link-color:                   $gray-light !default;
+$nav-disabled-link-hover-color:             $gray-light !default;
+
+//== Tabs
+$nav-tabs-border-color:                     #ddd !default;
+
+$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+
+$nav-tabs-active-link-hover-bg:             $body-bg !default;
+$nav-tabs-active-link-hover-color:          $gray !default;
+$nav-tabs-active-link-hover-border-color:   #ddd !default;
+
+$nav-tabs-justified-link-border-color:            #ddd !default;
+$nav-tabs-justified-active-link-border-color:     $body-bg !default;
+
+//== Pills
+$nav-pills-border-radius:                   $border-radius-base !default;
+$nav-pills-active-link-hover-bg:            $component-active-bg !default;
+$nav-pills-active-link-hover-color:         $component-active-color !default;
+
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $link-color !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    #ddd !default;
+
+$pagination-hover-color:               $link-hover-color !default;
+$pagination-hover-bg:                  $gray-lighter !default;
+$pagination-hover-border:              #ddd !default;
+
+$pagination-active-color:              #fff !default;
+$pagination-active-bg:                 $brand-primary !default;
+$pagination-active-border:             $brand-primary !default;
+
+$pagination-disabled-color:            $gray-light !default;
+$pagination-disabled-bg:               #fff !default;
+$pagination-disabled-border:           #ddd !default;
+
+
+//== Pager
+//
+//##
+
+$pager-bg:                             $pagination-bg !default;
+$pager-border:                         $pagination-border !default;
+$pager-border-radius:                  15px !default;
+
+$pager-hover-bg:                       $pagination-hover-bg !default;
+
+$pager-active-bg:                      $pagination-active-bg !default;
+$pager-active-color:                   $pagination-active-color !default;
+
+$pager-disabled-color:                 $pagination-disabled-color !default;
+
+
+//== Jumbotron
+//
+//##
+
+$jumbotron-padding:              30px !default;
+$jumbotron-color:                inherit !default;
+$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-heading-color:        inherit !default;
+$jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
+$jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             #3c763d !default;
+$state-success-bg:               #dff0d8 !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                #31708f !default;
+$state-info-bg:                  #d9edf7 !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             #8a6d3b !default;
+$state-warning-bg:               #fcf8e3 !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              #a94442 !default;
+$state-danger-bg:                #f2dede !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           200px !default;
+//** Tooltip text color
+$tooltip-color:               #fff !default;
+//** Tooltip background color
+$tooltip-bg:                  #000 !default;
+$tooltip-opacity:             .9 !default;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px !default;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg !default;
+
+
+//== Popovers
+//
+//##
+
+//** Popover body background color
+$popover-bg:                          #fff !default;
+//** Popover maximum width
+$popover-max-width:                   276px !default;
+//** Popover border color
+$popover-border-color:                rgba(0,0,0,.2) !default;
+//** Popover fallback border color
+$popover-fallback-border-color:       #ccc !default;
+
+//** Popover title background color
+$popover-title-bg:                    darken($popover-bg, 3%) !default;
+
+//** Popover arrow width
+$popover-arrow-width:                 10px !default;
+//** Popover arrow color
+$popover-arrow-color:                 $popover-bg !default;
+
+//** Popover outer arrow width
+$popover-arrow-outer-width:           ($popover-arrow-width + 1) !default;
+//** Popover outer arrow color
+$popover-arrow-outer-color:           fade_in($popover-border-color, 0.05) !default;
+//** Popover outer arrow fallback color
+$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%) !default;
+
+
+//== Labels
+//
+//##
+
+//** Default label background color
+$label-default-bg:            $gray-light !default;
+//** Primary label background color
+$label-primary-bg:            $brand-primary !default;
+//** Success label background color
+$label-success-bg:            $brand-success !default;
+//** Info label background color
+$label-info-bg:               $brand-info !default;
+//** Warning label background color
+$label-warning-bg:            $brand-warning !default;
+//** Danger label background color
+$label-danger-bg:             $brand-danger !default;
+
+//** Default label text color
+$label-color:                 #fff !default;
+//** Default text color of a linked label
+$label-link-hover-color:      #fff !default;
+
+
+//== Modals
+//
+//##
+
+//** Padding applied to the modal body
+$modal-inner-padding:         15px !default;
+
+//** Padding applied to the modal title
+$modal-title-padding:         15px !default;
+//** Modal title line-height
+$modal-title-line-height:     $line-height-base !default;
+
+//** Background color of modal content area
+$modal-content-bg:                             #fff !default;
+//** Modal content border color
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color:          #999 !default;
+
+//** Modal backdrop background color
+$modal-backdrop-bg:           #000 !default;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .5 !default;
+//** Modal header border color
+$modal-header-border-color:   #e5e5e5 !default;
+//** Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+$modal-lg:                    900px !default;
+$modal-md:                    600px !default;
+$modal-sm:                    300px !default;
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$alert-padding:               15px !default;
+$alert-border-radius:         $border-radius-base !default;
+$alert-link-font-weight:      bold !default;
+
+$alert-success-bg:            $state-success-bg !default;
+$alert-success-text:          $state-success-text !default;
+$alert-success-border:        $state-success-border !default;
+
+$alert-info-bg:               $state-info-bg !default;
+$alert-info-text:             $state-info-text !default;
+$alert-info-border:           $state-info-border !default;
+
+$alert-warning-bg:            $state-warning-bg !default;
+$alert-warning-text:          $state-warning-text !default;
+$alert-warning-border:        $state-warning-border !default;
+
+$alert-danger-bg:             $state-danger-bg !default;
+$alert-danger-text:           $state-danger-text !default;
+$alert-danger-border:         $state-danger-border !default;
+
+
+//== Progress bars
+//
+//##
+
+//** Background color of the whole progress component
+$progress-bg:                 #f5f5f5 !default;
+//** Progress bar text color
+$progress-bar-color:          #fff !default;
+//** Variable for setting rounded corners on progress bar.
+$progress-border-radius:      $border-radius-base !default;
+
+//** Default progress bar color
+$progress-bar-bg:             $brand-primary !default;
+//** Success progress bar color
+$progress-bar-success-bg:     $brand-success !default;
+//** Warning progress bar color
+$progress-bar-warning-bg:     $brand-warning !default;
+//** Danger progress bar color
+$progress-bar-danger-bg:      $brand-danger !default;
+//** Info progress bar color
+$progress-bar-info-bg:        $brand-info !default;
+
+
+//== List group
+//
+//##
+
+//** Background color on `.list-group-item`
+$list-group-bg:                 #fff !default;
+//** `.list-group-item` border color
+$list-group-border:             #ddd !default;
+//** List group border radius
+$list-group-border-radius:      $border-radius-base !default;
+
+//** Background color of single list items on hover
+$list-group-hover-bg:           #f5f5f5 !default;
+//** Text color of active list items
+$list-group-active-color:       $component-active-color !default;
+//** Background color of active list items
+$list-group-active-bg:          $component-active-bg !default;
+//** Border color of active list elements
+$list-group-active-border:      $list-group-active-bg !default;
+//** Text color for content within active list items
+$list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
+
+//** Text color of disabled list items
+$list-group-disabled-color:      $gray-light !default;
+//** Background color of disabled list items
+$list-group-disabled-bg:         $gray-lighter !default;
+//** Text color for content within disabled list items
+$list-group-disabled-text-color: $list-group-disabled-color !default;
+
+$list-group-link-color:         #555 !default;
+$list-group-link-hover-color:   $list-group-link-color !default;
+$list-group-link-heading-color: #333 !default;
+
+
+//== Panels
+//
+//##
+
+$panel-bg:                    #fff !default;
+$panel-body-padding:          15px !default;
+$panel-heading-padding:       10px 15px !default;
+$panel-footer-padding:        $panel-heading-padding !default;
+$panel-border-radius:         $border-radius-base !default;
+
+//** Border color for elements within panels
+$panel-inner-border:          #ddd !default;
+$panel-footer-bg:             #f5f5f5 !default;
+
+$panel-default-text:          $gray-dark !default;
+$panel-default-border:        #ddd !default;
+$panel-default-heading-bg:    #f5f5f5 !default;
+
+$panel-primary-text:          #fff !default;
+$panel-primary-border:        $brand-primary !default;
+$panel-primary-heading-bg:    $brand-primary !default;
+
+$panel-success-text:          $state-success-text !default;
+$panel-success-border:        $state-success-border !default;
+$panel-success-heading-bg:    $state-success-bg !default;
+
+$panel-info-text:             $state-info-text !default;
+$panel-info-border:           $state-info-border !default;
+$panel-info-heading-bg:       $state-info-bg !default;
+
+$panel-warning-text:          $state-warning-text !default;
+$panel-warning-border:        $state-warning-border !default;
+$panel-warning-heading-bg:    $state-warning-bg !default;
+
+$panel-danger-text:           $state-danger-text !default;
+$panel-danger-border:         $state-danger-border !default;
+$panel-danger-heading-bg:     $state-danger-bg !default;
+
+
+//== Thumbnails
+//
+//##
+
+//** Padding around the thumbnail image
+$thumbnail-padding:           4px !default;
+//** Thumbnail background color
+$thumbnail-bg:                $body-bg !default;
+//** Thumbnail border color
+$thumbnail-border:            #ddd !default;
+//** Thumbnail border radius
+$thumbnail-border-radius:     $border-radius-base !default;
+
+//** Custom text color for thumbnail captions
+$thumbnail-caption-color:     $text-color !default;
+//** Padding around the thumbnail caption
+$thumbnail-caption-padding:   9px !default;
+
+
+//== Wells
+//
+//##
+
+$well-bg:                     #f5f5f5 !default;
+$well-border:                 darken($well-bg, 7%) !default;
+
+
+//== Badges
+//
+//##
+
+$badge-color:                 #fff !default;
+//** Linked badge text color on hover
+$badge-link-hover-color:      #fff !default;
+$badge-bg:                    $gray-light !default;
+
+//** Badge text color in active nav link
+$badge-active-color:          $link-color !default;
+//** Badge background color in active nav link
+$badge-active-bg:             #fff !default;
+
+$badge-font-weight:           bold !default;
+$badge-line-height:           1 !default;
+$badge-border-radius:         10px !default;
+
+
+//== Breadcrumbs
+//
+//##
+
+$breadcrumb-padding-vertical:   8px !default;
+$breadcrumb-padding-horizontal: 15px !default;
+//** Breadcrumb background color
+$breadcrumb-bg:                 #f5f5f5 !default;
+//** Breadcrumb text color
+$breadcrumb-color:              #ccc !default;
+//** Text color of current page in the breadcrumb
+$breadcrumb-active-color:       $gray-light !default;
+//** Textual separator for between breadcrumb elements
+$breadcrumb-separator:          "/" !default;
+
+
+//== Carousel
+//
+//##
+
+$carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
+
+$carousel-control-color:                      #fff !default;
+$carousel-control-width:                      15% !default;
+$carousel-control-opacity:                    .5 !default;
+$carousel-control-font-size:                  20px !default;
+
+$carousel-indicator-active-bg:                #fff !default;
+$carousel-indicator-border-color:             #fff !default;
+
+$carousel-caption-color:                      #fff !default;
+
+
+//== Close
+//
+//##
+
+$close-font-weight:           bold !default;
+$close-color:                 #000 !default;
+$close-text-shadow:           0 1px 0 #fff !default;
+
+
+//== Code
+//
+//##
+
+$code-color:                  #c7254e !default;
+$code-bg:                     #f9f2f4 !default;
+
+$kbd-color:                   #fff !default;
+$kbd-bg:                      #333 !default;
+
+$pre-bg:                      #f5f5f5 !default;
+$pre-color:                   $gray-dark !default;
+$pre-border-color:            #ccc !default;
+$pre-scrollable-max-height:   340px !default;
+
+
+//== Type
+//
+//##
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px !default;
+//** Text muted color
+$text-muted:                  $gray-light !default;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-light !default;
+//** Headings small color
+$headings-small-color:        $gray-light !default;
+//** Blockquote small color
+$blockquote-small-color:      $gray-light !default;
+//** Blockquote font size
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
+//** Blockquote border color
+$blockquote-border-color:     $gray-lighter !default;
+//** Page header border color
+$page-header-border-color:    $gray-lighter !default;
+//** Width of horizontal description list titles
+$dl-horizontal-offset:        $component-offset-horizontal !default;
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
+//** Horizontal line color.
+$hr-border:                   $gray-lighter !default;
+:
+@linei:@options{ :@source_rangeo:Sass::Source::Range	:@end_poso:Sass::Source::Position;i:@offseti:@start_poso;;i;i:@importero: Sass::Importers::Filesystem:
+@root"5/home/pavan/Activity/AngularApp/bower_components:@same_name_warningso:Set:
+@hash{ :@real_root"5/home/pavan/Activity/AngularApp/bower_components:
+@file"z/home/pavan/Activity/AngularApp/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss:@has_childrenT:@children[Wo:Sass::Tree::VariableNode;i:@global0;@;	o;
+	;o;;i;i2;o;;i;i;@;@:@guardedT:
+@name" bootstrap-sass-asset-helper;[ :
+@expro: Sass::Script::Tree::Literal	:@filename@;i;	o;
+	;o;;i;i);o;;i;i$;@;@:@valueo:Sass::Script::Value::Bool;@; Fo:Sass::Tree::CommentNode
+;i:
+@type:silent;@; ["M/*
+ * Variables
+ * -------------------------------------------------- */;[ o;"
+;i;#;$;@; ["K/*== Colors
+ *
+ *## Gray and brand colors for use across Bootstrap. */;[ o;;i;0;@;	o;
+	;o;;i;i,;o;;i;i;@;@;T;"gray-base;[ ;o;	;@;i;	o;
+	;o;;i;i#;o;;i;i;@;@; o:Sass::Script::Value::Color	;@:@representation"	#000; 0:@attrs{	:
+alphai:	bluei :redi :
+greeni o;;i;0;@;	o;
+	;o;;i;iB;o;;i;i;@;@;T;"gray-darker;[ ;o: Sass::Script::Tree::Funcall;@;i;@;	o;
+	;o;;i;i9;o;;i;i;@;@:@splat0;"lighten:@kwarg_splat0:
+@args[o:!Sass::Script::Tree::Variable;@;i;@;	o;
+	;o;;i;i1;o;;i;i';@;@;"gray-base:@underscored_name"gray_baseo;	;@;i;	o;
+	;o;;i;i8;o;;i;i3;@;@; o: Sass::Script::Value::Number
+;@:@original"
+13.5%:@denominator_units[ ; f	13.5:@numerator_units["%:@keywordso:Sass::Util::NormalizedMap:	@mapIC:OrderedHash{ :
+@keys[ :@key_strings{ o;"
+;i;#;$;@; ["/* #222 */;[ o;;i;0;@;	o;
+	;o;;i;i@;o;;i;i;@;@;T;"gray-dark;[ ;o;,;@;i;@;	o;
+	;o;;i;i7;o;;i;i;@;@;-0;"lighten;.0;/[o;0;@;i;@;	o;
+	;o;;i;i1;o;;i;i';@;@;"gray-base;1"gray_baseo;	;@;i;	o;
+	;o;;i;i6;o;;i;i3;@;@; o;2
+;@;3"20%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;#;$;@; ["/* #333 */;[ o;;i;0;@;	o;
+	;o;;i;iB;o;;i;i;@;@;T;"	gray;[ ;o;,;@;i;@;	o;
+	;o;;i;i9;o;;i;i;@;@;-0;"lighten;.0;/[o;0;@;i;@;	o;
+	;o;;i;i1;o;;i;i';@;@;"gray-base;1"gray_baseo;	;@;i;	o;
+	;o;;i;i8;o;;i;i3;@;@; o;2
+;@;3"
+33.5%;4[ ; f	33.5;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;#;$;@; ["/* #555 */;[ o;;i;0;@;	o;
+	;o;;i;iB;o;;i;i;@;@;T;"gray-light;[ ;o;,;@;i;@;	o;
+	;o;;i;i9;o;;i;i;@;@;-0;"lighten;.0;/[o;0;@;i;@;	o;
+	;o;;i;i1;o;;i;i';@;@;"gray-base;1"gray_baseo;	;@;i;	o;
+	;o;;i;i8;o;;i;i3;@;@; o;2
+;@;3"
+46.7%;4[ ; f46.700000000000003 ôö;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;#;$;@; ["/* #777 */;[ o;;i;0;@;	o;
+	;o;;i;iB;o;;i;i;@;@;T;"gray-lighter;[ ;o;,;@;i;@;	o;
+	;o;;i;i9;o;;i;i;@;@;-0;"lighten;.0;/[o;0;@;i;@;	o;
+	;o;;i;i1;o;;i;i';@;@;"gray-base;1"gray_baseo;	;@;i;	o;
+	;o;;i;i8;o;;i;i3;@;@; o;2
+;@;3"
+93.5%;4[ ; f	93.5;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;#;$;@; ["/* #eee */;[ o;;i;0;@;	o;
+	;o;;i;i<;o;;i;i;@;@;T;"brand-primary;[ ;o;,;@;i;@;	o;
+	;o;;i;i3;o;;i;i;@;@;-0;"darken;.0;/[o;	;@;i;	o;
+	;o;;i;i,;o;;i;i%;@;@; o;%	;@;&"#428bca; 0;'{	;(i;)i ;*iG;+ião;	;@;i;	o;
+	;o;;i;i2;o;;i;i.;@;@; o;2
+;@;3"	6.5%;4[ ; f6.5;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;#;$;@; ["/* #337ab7 */;[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"brand-success;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i;@;@; o;%	;@;&"#5cb85c; 0;'{	;(i;)ia;*ia;+i∏o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"brand-info;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i;@;@; o;%	;@;&"#5bc0de; 0;'{	;(i;)iﬁ;*i`;+i¿o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"brand-warning;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i;@;@; o;%	;@;&"#f0ad4e; 0;'{	;(i;)iS;*i;+i≠o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"brand-danger;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i;@;@; o;%	;@;&"#d9534f; 0;'{	;(i;)iT;*iŸ;+iXo;"
+;i;#;$;@; ["M/*== Scaffolding
+ *
+ *## Settings for some of the most global styles. */;[ o;"
+;i";#;$;@; ["+/*** Background color for `<body>`. */;[ o;;i#;0;@;	o;
+	;o;;i#;i+;o;;i#;i;@;@;T;"body-bg;[ ;o;	;@;i#;	o;
+	;o;;i#;i";o;;i#;i;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i$;#;$;@; ["+/*** Global text color on `<body>`. */;[ o;;i%;0;@;	o;
+	;o;;i%;i1;o;;i%;i;@;@;T;"text-color;[ ;o;0;@;i%;@;	o;
+	;o;;i%;i(;o;;i%;i;@;@;"gray-dark;1"gray_darko;"
+;i';#;$;@; ["'/*** Global textual link color. */;[ o;;i(;0;@;	o;
+	;o;;i(;i5;o;;i(;i;@;@;T;"link-color;[ ;o;0;@;i(;@;	o;
+	;o;;i(;i,;o;;i(;i;@;@;"brand-primary;1"brand_primaryo;"
+;i);#;$;@; [":/*** Link hover color set via `darken()` function. */;[ o;;i*;0;@;	o;
+	;o;;i*;i?;o;;i*;i;@;@;T;"link-hover-color;[ ;o;,;@;i*;@;	o;
+	;o;;i*;i6;o;;i*;i;@;@;-0;"darken;.0;/[o;0;@;i*;@;	o;
+	;o;;i*;i0;o;;i*;i%;@;@;"link-color;1"link_coloro;	;@;i*;	o;
+	;o;;i*;i5;o;;i*;i2;@;@; o;2
+;@;3"15%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i+;#;$;@; ["#/*** Link hover decoration. */;[ o;;i,;0;@;	o;
+	;o;;i,;i0;o;;i,;i;@;@;T;"link-hover-decoration;[ ;o;	;@;i,;	o;
+	;o;;i,;i';o;;i,;i;@;@; o: Sass::Script::Value::String;#:identifier;@; "underlineo;"
+;i/;#;$;@; ["_/*== Typography
+ *
+ *## Font, line-height, and color for body text, headings, and more. */;[ o;;i3;0;@;	o;
+	;o;;i3;iW;o;;i3;i;@;@;T;"font-family-sans-serif;[ ;o:$Sass::Script::Tree::ListLiteral;@;i3;@;	o;
+	;o;;i3;i0;o;;i3;i ;@;@:@separator:
+comma:@elements[	o;	;@;i3;	o;
+	;o;;i3;i0;o;;i3;i ;@;@; o;<;#:string;@; "Helvetica Neueo;	;@;i3;	o;
+	;o;;i3;i;;o;;i3;i2;@;@; o;<;#;=;@; "Helveticao;	;@;i3;	o;
+	;o;;i3;iB;o;;i3;i=;@;@; o;<;#;=;@; "
+Arialo;	;@;i3;	o;
+	;o;;i3;iN;o;;i3;iD;@;@; o;<;#;=;@; "sans-serifo;;i4;0;@;	o;
+	;o;;i4;iQ;o;;i4;i;@;@;T;"font-family-serif;[ ;o;>;@;i4;@;	o;
+	;o;;i4;i';o;;i4;i ;@;@;?;@;A[	o;	;@;i4;	o;
+	;o;;i4;i';o;;i4;i ;@;@; o;<;#;=;@; "Georgiao;	;@;i4;	o;
+	;o;;i4;i:;o;;i4;i);@;@; o;<;#;B;@; "Times New Romano;	;@;i4;	o;
+	;o;;i4;iA;o;;i4;i<;@;@; o;<;#;=;@; "
+Timeso;	;@;i4;	o;
+	;o;;i4;iH;o;;i4;iC;@;@; o;<;#;=;@; "
+serifo;"
+;i5;#;$;@; ["H/*** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`. */;[ o;;i6;0;@;	o;
+	;o;;i6;iZ;o;;i6;i;@;@;T;"font-family-monospace;[ ;o;>;@;i6;@;	o;
+	;o;;i6;i%;o;;i6;i ;@;@;?;@;A[
+o;	;@;i6;	o;
+	;o;;i6;i%;o;;i6;i ;@;@; o;<;#;=;@; "
+Menloo;	;@;i6;	o;
+	;o;;i6;i-;o;;i6;i';@;@; o;<;#;=;@; "Monacoo;	;@;i6;	o;
+	;o;;i6;i7;o;;i6;i/;@;@; o;<;#;=;@; "Consolaso;	;@;i6;	o;
+	;o;;i6;iF;o;;i6;i9;@;@; o;<;#;B;@; "Courier Newo;	;@;i6;	o;
+	;o;;i6;iQ;o;;i6;iH;@;@; o;<;#;=;@; "monospaceo;;i7;0;@;	o;
+	;o;;i7;i@;o;;i7;i;@;@;T;"font-family-base;[ ;o;0;@;i7;@;	o;
+	;o;;i7;i7;o;;i7;i ;@;@;"font-family-sans-serif;1"font_family_sans_serifo;;i9;0;@;	o;
+	;o;;i9;i-;o;;i9;i;@;@;T;"font-size-base;[ ;o;	;@;i9;	o;
+	;o;;i9;i$;o;;i9;i ;@;@; o;2
+;@;3"	14px;4[ ; i;5["pxo;;i:;0;@;	o;
+	;o;;i:;iG;o;;i:;i;@;@;T;"font-size-large;[ ;o;,;@;i:;@;	o;
+	;o;;i:;i>;o;;i:;i ;@;@;-0;"	ceil;.0;/[o:"Sass::Script::Tree::Operation;@;i:;@;	o;
+	;o;;i:;i<;o;;i:;i&;@;@:@operator:
+times:@operand2o;	;@;i:;	o;
+	;o;;i:;i<;o;;i:;i8;@;@; o;2
+;@;3"	1.25;4[ ; f	1.25;5[ :@operand1o;0;@;i:;@;	o;
+	;o;;i:;i5;@B;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i:;#;$;@; ["/* ~18px */;[ o;;i;;0;@;	o;
+	;o;;i;;iG;o;;i;;i;@;@;T;"font-size-small;[ ;o;,;@;i;;@;	o;
+	;o;;i;;i>;o;;i;;i ;@;@;-0;"	ceil;.0;/[o;C;@;i;;@;	o;
+	;o;;i;;i<;o;;i;;i&;@;@;D;E;Fo;	;@;i;;	o;
+	;o;;i;;i<;o;;i;;i8;@;@; o;2
+;@;3"	0.85;4@I; f0.84999999999999998 33;5[ ;Go;0;@;i;;@;	o;
+	;o;;i;;i5;@h;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;;#;$;@; ["/* ~12px */;[ o;;i=;0;@;	o;
+	;o;;i=;iG;o;;i=;i;@;@;T;"font-size-h1;[ ;o;,;@;i=;@;	o;
+	;o;;i=;i>;o;;i=;i ;@;@;-0;"
+floor;.0;/[o;C;@;i=;@;	o;
+	;o;;i=;i<;o;;i=;i';@;@;D;E;Fo;	;@;i=;	o;
+	;o;;i=;i<;o;;i=;i9;@;@; o;2
+;@;3"2.6;4@I; f2.6000000000000001 ÃÕ;5[ ;Go;0;@;i=;@;	o;
+	;o;;i=;i6;@ç;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i=;#;$;@; ["/* ~36px */;[ o;;i>;0;@;	o;
+	;o;;i>;iH;o;;i>;i;@;@;T;"font-size-h2;[ ;o;,;@;i>;@;	o;
+	;o;;i>;i?;o;;i>;i ;@;@;-0;"
+floor;.0;/[o;C;@;i>;@;	o;
+	;o;;i>;i=;o;;i>;i';@;@;D;E;Fo;	;@;i>;	o;
+	;o;;i>;i=;o;;i>;i9;@;@; o;2
+;@;3"	2.15;4@I; f2.1499999999999999 33;5[ ;Go;0;@;i>;@;	o;
+	;o;;i>;i6;@≤;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i>;#;$;@; ["/* ~30px */;[ o;;i?;0;@;	o;
+	;o;;i?;iF;o;;i?;i;@;@;T;"font-size-h3;[ ;o;,;@;i?;@;	o;
+	;o;;i?;i=;o;;i?;i ;@;@;-0;"	ceil;.0;/[o;C;@;i?;@;	o;
+	;o;;i?;i;;o;;i?;i&;@;@;D;E;Fo;	;@;i?;	o;
+	;o;;i?;i;;o;;i?;i8;@;@; o;2
+;@;3"1.7;4@I; f1.7 33;5[ ;Go;0;@;i?;@;	o;
+	;o;;i?;i5;@◊;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i?;#;$;@; ["/* ~24px */;[ o;;i@;0;@;	o;
+	;o;;i@;iG;o;;i@;i;@;@;T;"font-size-h4;[ ;o;,;@;i@;@;	o;
+	;o;;i@;i>;o;;i@;i ;@;@;-0;"	ceil;.0;/[o;C;@;i@;@;	o;
+	;o;;i@;i<;o;;i@;i&;@;@;D;E;Fo;	;@;i@;	o;
+	;o;;i@;i<;o;;i@;i8;@;@; o;2
+;@;3"	1.25;4@I; f	1.25;5[ ;Go;0;@;i@;@;	o;
+	;o;;i@;i5;@¸;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i@;#;$;@; ["/* ~18px */;[ o;;iA;0;@;	o;
+	;o;;iA;i8;o;;iA;i;@;@;T;"font-size-h5;[ ;o;0;@;iA;@;	o;
+	;o;;iA;i/;o;;iA;i ;@;@;"font-size-base;1"font_size_baseo;;iB;0;@;	o;
+	;o;;iB;iG;o;;iB;i;@;@;T;"font-size-h6;[ ;o;,;@;iB;@;	o;
+	;o;;iB;i>;o;;iB;i ;@;@;-0;"	ceil;.0;/[o;C;@;iB;@;	o;
+	;o;;iB;i<;o;;iB;i&;@;@;D;E;Fo;	;@;iB;	o;
+	;o;;iB;i<;o;;iB;i8;@;@; o;2
+;@;3"	0.85;4@I; f0.84999999999999998 33;5[ ;Go;0;@;iB;@;	o;
+	;o;;iB;i5;@-;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;iB;#;$;@; ["/* ~12px */;[ o;"
+;iD;#;$;@; ["H/*** Unit-less `line-height` for use in components like buttons. */;[ o;;iE;0;@;	o;
+	;o;;iE;i4;o;;iE;i;@;@;T;"line-height-base;[ ;o;	;@;iE;	o;
+	;o;;iE;i+;o;;iE;i ;@;@; o;2
+;@;3"1.428571429;4@I; f1.428571429 ·9;5[ o;"
+;iE;#;$;@; ["q/* 20/14
+ *** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc. */;[ o;;iG;0;@;	o;
+	;o;;iG;iU;o;;iG;i;@;@;T;"line-height-computed;[ ;o;,;@;iG;@;	o;
+	;o;;iG;iL;o;;iG;i ;@;@;-0;"
+floor;.0;/[o;C;@;iG;@;	o;
+	;o;;iG;iJ;o;;iG;i';@;@;D;E;Fo;0;@;iG;@;	o;
+	;o;;iG;iJ;o;;iG;i9;@;@;"line-height-base;1"line_height_base;Go;0;@;iG;@;	o;
+	;o;;iG;i6;@h;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;iG;#;$;@; ["/* ~20px */;[ o;"
+;iI;#;$;@; ["9/*** By default, this inherits from the `<body>`. */;[ o;;iJ;0;@;	o;
+	;o;;iJ;i0;o;;iJ;i;@;@;T;"headings-font-family;[ ;o;	;@;iJ;	o;
+	;o;;iJ;i';o;;iJ;i ;@;@; o;<;#;=;@; "inherito;;iK;0;@;	o;
+	;o;;iK;i,;o;;iK;i;@;@;T;"headings-font-weight;[ ;o;	;@;iK;	o;
+	;o;;iK;i#;o;;iK;i ;@;@; o;2
+;@;3"500;4@I; iÙ;5[ o;;iL;0;@;	o;
+	;o;;iL;i,;o;;iL;i;@;@;T;"headings-line-height;[ ;o;	;@;iL;	o;
+	;o;;iL;i#;o;;iL;i ;@;@; o;2
+;@;3"1.1;4@I; f1.1000000000000001 ôö;5[ o;;iM;0;@;	o;
+	;o;;iM;i0;o;;iM;i;@;@;T;"headings-color;[ ;o;	;@;iM;	o;
+	;o;;iM;i';o;;iM;i ;@;@; o;<;#;=;@; "inherito;"
+;iP;#;$;@; ["ñ/*== Iconography
+ *
+ *## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower. */;[ o;"
+;iT;#;$;@; [",/*** Load fonts from this directory. */;[ o;"
+;iV;#;$;@; ["’/* [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
+ * [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths. */;[ o;;iX;0;@;	o;
+	;o;;iX;ie;o;;iX;i;@;@;T;"icon-font-path;[ ;o;,;@;iX;@;	o;
+	;o;;iX;i\;o;;iX;i;@;@;-0;"if;.0;/[o;0;@;iX;@;	o;
+	;o;;iX;i6;o;;iX;i;@;@;" bootstrap-sass-asset-helper;1" bootstrap_sass_asset_helpero;	;@;iX;	o;
+	;o;;iX;iD;o;;iX;i8;@;@; o;<;#;B;@; "bootstrap/o;	;@;iX;	o;
+	;o;;iX;i[;o;;iX;iF;@;@; o;<;#;B;@; "../fonts/bootstrap/;6o;7;8IC;9{ ;:[ ;;{ o;"
+;iZ;#;$;@; ["*/*** File name for all font files. */;[ o;;i[;0;@;	o;
+	;o;;i[;iG;o;;i[;i;@;@;T;"icon-font-name;[ ;o;	;@;i[;	o;
+	;o;;i[;i>;o;;i[;i ;@;@; o;<;#;B;@; "!glyphicons-halflings-regularo;"
+;i\;#;$;@; ["-/*** Element ID within SVG icon file. */;[ o;;i];0;@;	o;
+	;o;;i];iF;o;;i];i;@;@;T;"icon-font-svg-id;[ ;o;	;@;i];	o;
+	;o;;i];i=;o;;i];i ;@;@; o;<;#;B;@; " glyphicons_halflingsregularo;"
+;i`;#;$;@; ["î/*== Components
+ *
+ *## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start). */;[ o;;id;0;@;	o;
+	;o;;id;i.;o;;id;i;@;@;T;"padding-base-vertical;[ ;o;	;@;id;	o;
+	;o;;id;i%;o;;id;i";@;@; o;2
+;@;3"6px;4[ ; i;5["pxo;;ie;0;@;	o;
+	;o;;ie;i/;o;;ie;i;@;@;T;"padding-base-horizontal;[ ;o;	;@;ie;	o;
+	;o;;ie;i&;o;;ie;i";@;@; o;2
+;@;3"	12px;4[ ; i;5["pxo;;ig;0;@;	o;
+	;o;;ig;i/;o;;ig;i;@;@;T;"padding-large-vertical;[ ;o;	;@;ig;	o;
+	;o;;ig;i&;o;;ig;i";@;@; o;2
+;@;3"	10px;4[ ; i;5["pxo;;ih;0;@;	o;
+	;o;;ih;i/;o;;ih;i;@;@;T;"padding-large-horizontal;[ ;o;	;@;ih;	o;
+	;o;;ih;i&;o;;ih;i";@;@; o;2
+;@;3"	16px;4[ ; i;5["pxo;;ij;0;@;	o;
+	;o;;ij;i.;o;;ij;i;@;@;T;"padding-small-vertical;[ ;o;	;@;ij;	o;
+	;o;;ij;i%;o;;ij;i";@;@; o;2
+;@;3"5px;4[ ; i
+;5["pxo;;ik;0;@;	o;
+	;o;;ik;i/;o;;ik;i;@;@;T;"padding-small-horizontal;[ ;o;	;@;ik;	o;
+	;o;;ik;i&;o;;ik;i";@;@; o;2
+;@;3"	10px;4[ ; i;5["pxo;;im;0;@;	o;
+	;o;;im;i.;o;;im;i;@;@;T;"padding-xs-vertical;[ ;o;	;@;im;	o;
+	;o;;im;i%;o;;im;i";@;@; o;2
+;@;3"1px;4[ ; i;5["pxo;;in;0;@;	o;
+	;o;;in;i.;o;;in;i;@;@;T;"padding-xs-horizontal;[ ;o;	;@;in;	o;
+	;o;;in;i%;o;;in;i";@;@; o;2
+;@;3"5px;4[ ; i
+;5["pxo;;ip;0;@;	o;
+	;o;;ip;i4;o;;ip;i;@;@;T;"line-height-large;[ ;o;	;@;ip;	o;
+	;o;;ip;i+;o;;ip;i";@;@; o;2
+;@;3"1.3333333;4@I; f1.3333333000000001 Ø";5[ o;"
+;ip;#;$;@; [",/* extra decimals for Win 8.1 Chrome */;[ o;;iq;0;@;	o;
+	;o;;iq;i.;o;;iq;i;@;@;T;"line-height-small;[ ;o;	;@;iq;	o;
+	;o;;iq;i%;o;;iq;i";@;@; o;2
+;@;3"1.5;4@I; f1.5;5[ o;;is;0;@;	o;
+	;o;;is;i.;o;;is;i;@;@;T;"border-radius-base;[ ;o;	;@;is;	o;
+	;o;;is;i%;o;;is;i";@;@; o;2
+;@;3"4px;4[ ; i	;5["pxo;;it;0;@;	o;
+	;o;;it;i.;o;;it;i;@;@;T;"border-radius-large;[ ;o;	;@;it;	o;
+	;o;;it;i%;o;;it;i";@;@; o;2
+;@;3"6px;4[ ; i;5["pxo;;iu;0;@;	o;
+	;o;;iu;i.;o;;iu;i;@;@;T;"border-radius-small;[ ;o;	;@;iu;	o;
+	;o;;iu;i%;o;;iu;i";@;@; o;2
+;@;3"3px;4[ ; i;5["pxo;"
+;iw;#;$;@; ["E/*** Global color for active items (e.g., navs or dropdowns). */;[ o;;ix;0;@;	o;
+	;o;;ix;i/;o;;ix;i;@;@;T;"component-active-color;[ ;o;	;@;ix;	o;
+	;o;;ix;i&;o;;ix;i";@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;iy;#;$;@; ["P/*** Global background color for active items (e.g., navs or dropdowns). */;[ o;;iz;0;@;	o;
+	;o;;iz;i9;o;;iz;i;@;@;T;"component-active-bg;[ ;o;0;@;iz;@;	o;
+	;o;;iz;i0;o;;iz;i";@;@;"brand-primary;1"brand_primaryo;"
+;i|;#;$;@; ["R/*** Width of the `border` for generating carets that indicator dropdowns. */;[ o;;i};0;@;	o;
+	;o;;i};i.;o;;i};i;@;@;T;"caret-width-base;[ ;o;	;@;i};	o;
+	;o;;i};i%;o;;i};i";@;@; o;2
+;@;3"4px;4[ ; i	;5["pxo;"
+;i~;#;$;@; ["D/*** Carets increase slightly in size for larger components. */;[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"caret-width-large;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i";@;@; o;2
+;@;3"5px;4[ ; i
+;5["pxo;"
+;i};#;$;@; ["w/*== Tables
+ *
+ *## Customizes the `.table` component with basic values, each used across all table variations. */;[ o;"
+;iÅ;#;$;@; ["-/*** Padding for `<th>`s and `<td>`s. */;[ o;;iÇ;0;@;	o;
+	;o;;iÇ;i2;o;;iÇ;i;@;@;T;"table-cell-padding;[ ;o;	;@;iÇ;	o;
+	;o;;iÇ;i);o;;iÇ;i&;@;@; o;2
+;@;3"8px;4[ ; i;5["pxo;"
+;iÉ;#;$;@; ["5/*** Padding for cells in `.table-condensed`. */;[ o;;iÑ;0;@;	o;
+	;o;;iÑ;i2;o;;iÑ;i;@;@;T;"!table-condensed-cell-padding;[ ;o;	;@;iÑ;	o;
+	;o;;iÑ;i);o;;iÑ;i&;@;@; o;2
+;@;3"5px;4[ ; i
+;5["pxo;"
+;iÜ;#;$;@; [":/*** Default background color used for all tables. */;[ o;;iá;0;@;	o;
+	;o;;iá;i:;o;;iá;i;@;@;T;"table-bg;[ ;o;	;@;iá;	o;
+	;o;;iá;i1;o;;iá;i&;@;@; o;%	;@;&"transparent; 0;'{	;(f0;)i ;*i ;+i o;"
+;ià;#;$;@; ["8/*** Background color used for `.table-striped`. */;[ o;;iâ;0;@;	o;
+	;o;;iâ;i6;o;;iâ;i;@;@;T;"table-bg-accent;[ ;o;	;@;iâ;	o;
+	;o;;iâ;i-;o;;iâ;i&;@;@; o;%	;@;&"#f9f9f9; 0;'{	;(i;)i˘;*i˘;+i˘o;"
+;iä;#;$;@; ["6/*** Background color used for `.table-hover`. */;[ o;;iã;0;@;	o;
+	;o;;iã;i6;o;;iã;i;@;@;T;"table-bg-hover;[ ;o;	;@;iã;	o;
+	;o;;iã;i-;o;;iã;i&;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;;iå;0;@;	o;
+	;o;;iå;i>;o;;iå;i;@;@;T;"table-bg-active;[ ;o;0;@;iå;@;	o;
+	;o;;iå;i5;o;;iå;i&;@;@;"table-bg-hover;1"table_bg_hovero;"
+;ié;#;$;@; ["5/*** Border color for table and cell borders. */;[ o;;iè;0;@;	o;
+	;o;;iè;i3;o;;iè;i;@;@;T;"table-border-color;[ ;o;	;@;iè;	o;
+	;o;;iè;i*;o;;iè;i&;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;"
+;ií;#;$;@; ["g/*== Buttons
+ *
+ *## For each of Bootstrap's buttons, define text, background and border color. */;[ o;;iñ;0;@;	o;
+	;o;;iñ;i6;o;;iñ;i;@;@;T;"btn-font-weight;[ ;o;	;@;iñ;	o;
+	;o;;iñ;i-;o;;iñ;i';@;@; o;<;#;=;@; "normalo;;iò;0;@;	o;
+	;o;;iò;i4;o;;iò;i;@;@;T;"btn-default-color;[ ;o;	;@;iò;	o;
+	;o;;iò;i+;o;;iò;i';@;@; o;%	;@;&"	#333; 0;'{	;(i;)i8;*i8;+i8o;;iô;0;@;	o;
+	;o;;iô;i4;o;;iô;i;@;@;T;"btn-default-bg;[ ;o;	;@;iô;	o;
+	;o;;iô;i+;o;;iô;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;iö;0;@;	o;
+	;o;;iö;i4;o;;iö;i;@;@;T;"btn-default-border;[ ;o;	;@;iö;	o;
+	;o;;iö;i+;o;;iö;i';@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;;iú;0;@;	o;
+	;o;;iú;i4;o;;iú;i;@;@;T;"btn-primary-color;[ ;o;	;@;iú;	o;
+	;o;;iú;i+;o;;iú;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;iù;0;@;	o;
+	;o;;iù;i>;o;;iù;i;@;@;T;"btn-primary-bg;[ ;o;0;@;iù;@;	o;
+	;o;;iù;i5;o;;iù;i';@;@;"brand-primary;1"brand_primaryo;;iû;0;@;	o;
+	;o;;iû;iK;o;;iû;i;@;@;T;"btn-primary-border;[ ;o;,;@;iû;@;	o;
+	;o;;iû;iB;o;;iû;i';@;@;-0;"darken;.0;/[o;0;@;iû;@;	o;
+	;o;;iû;i=;o;;iû;i.;@;@;"btn-primary-bg;1"btn_primary_bgo;	;@;iû;	o;
+	;o;;iû;iA;o;;iû;i?;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i†;0;@;	o;
+	;o;;i†;i4;o;;i†;i;@;@;T;"btn-success-color;[ ;o;	;@;i†;	o;
+	;o;;i†;i+;o;;i†;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i°;0;@;	o;
+	;o;;i°;i>;o;;i°;i;@;@;T;"btn-success-bg;[ ;o;0;@;i°;@;	o;
+	;o;;i°;i5;o;;i°;i';@;@;"brand-success;1"brand_successo;;i¢;0;@;	o;
+	;o;;i¢;iK;o;;i¢;i;@;@;T;"btn-success-border;[ ;o;,;@;i¢;@;	o;
+	;o;;i¢;iB;o;;i¢;i';@;@;-0;"darken;.0;/[o;0;@;i¢;@;	o;
+	;o;;i¢;i=;o;;i¢;i.;@;@;"btn-success-bg;1"btn_success_bgo;	;@;i¢;	o;
+	;o;;i¢;iA;o;;i¢;i?;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i§;0;@;	o;
+	;o;;i§;i4;o;;i§;i;@;@;T;"btn-info-color;[ ;o;	;@;i§;	o;
+	;o;;i§;i+;o;;i§;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i•;0;@;	o;
+	;o;;i•;i;;o;;i•;i;@;@;T;"btn-info-bg;[ ;o;0;@;i•;@;	o;
+	;o;;i•;i2;o;;i•;i';@;@;"brand-info;1"brand_infoo;;i¶;0;@;	o;
+	;o;;i¶;iH;o;;i¶;i;@;@;T;"btn-info-border;[ ;o;,;@;i¶;@;	o;
+	;o;;i¶;i?;o;;i¶;i';@;@;-0;"darken;.0;/[o;0;@;i¶;@;	o;
+	;o;;i¶;i:;o;;i¶;i.;@;@;"btn-info-bg;1"btn_info_bgo;	;@;i¶;	o;
+	;o;;i¶;i>;o;;i¶;i<;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i®;0;@;	o;
+	;o;;i®;i4;o;;i®;i;@;@;T;"btn-warning-color;[ ;o;	;@;i®;	o;
+	;o;;i®;i+;o;;i®;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i©;0;@;	o;
+	;o;;i©;i>;o;;i©;i;@;@;T;"btn-warning-bg;[ ;o;0;@;i©;@;	o;
+	;o;;i©;i5;o;;i©;i';@;@;"brand-warning;1"brand_warningo;;i™;0;@;	o;
+	;o;;i™;iK;o;;i™;i;@;@;T;"btn-warning-border;[ ;o;,;@;i™;@;	o;
+	;o;;i™;iB;o;;i™;i';@;@;-0;"darken;.0;/[o;0;@;i™;@;	o;
+	;o;;i™;i=;o;;i™;i.;@;@;"btn-warning-bg;1"btn_warning_bgo;	;@;i™;	o;
+	;o;;i™;iA;o;;i™;i?;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i¨;0;@;	o;
+	;o;;i¨;i4;o;;i¨;i;@;@;T;"btn-danger-color;[ ;o;	;@;i¨;	o;
+	;o;;i¨;i+;o;;i¨;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i≠;0;@;	o;
+	;o;;i≠;i=;o;;i≠;i;@;@;T;"btn-danger-bg;[ ;o;0;@;i≠;@;	o;
+	;o;;i≠;i4;o;;i≠;i';@;@;"brand-danger;1"brand_dangero;;iÆ;0;@;	o;
+	;o;;iÆ;iJ;o;;iÆ;i;@;@;T;"btn-danger-border;[ ;o;,;@;iÆ;@;	o;
+	;o;;iÆ;iA;o;;iÆ;i';@;@;-0;"darken;.0;/[o;0;@;iÆ;@;	o;
+	;o;;iÆ;i<;o;;iÆ;i.;@;@;"btn-danger-bg;1"btn_danger_bgo;	;@;iÆ;	o;
+	;o;;iÆ;i@;o;;iÆ;i>;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i∞;0;@;	o;
+	;o;;i∞;i;;o;;i∞;i;@;@;T;"btn-link-disabled-color;[ ;o;0;@;i∞;@;	o;
+	;o;;i∞;i2;o;;i∞;i';@;@;"gray-light;1"gray_lighto;"
+;i≤;#;$;@; ["W/* Allows for customizing button radius independently from global border radius */;[ o;;i≥;0;@;	o;
+	;o;;i≥;iC;o;;i≥;i;@;@;T;"btn-border-radius-base;[ ;o;0;@;i≥;@;	o;
+	;o;;i≥;i:;o;;i≥;i';@;@;"border-radius-base;1"border_radius_baseo;;i¥;0;@;	o;
+	;o;;i¥;iD;o;;i¥;i;@;@;T;"btn-border-radius-large;[ ;o;0;@;i¥;@;	o;
+	;o;;i¥;i;;o;;i¥;i';@;@;"border-radius-large;1"border_radius_largeo;;iµ;0;@;	o;
+	;o;;iµ;iD;o;;iµ;i;@;@;T;"btn-border-radius-small;[ ;o;0;@;iµ;@;	o;
+	;o;;iµ;i;;o;;iµ;i';@;@;"border-radius-small;1"border_radius_smallo;"
+;i∏;#;$;@; ["/*== Forms
+ *
+ *## */;[ o;"
+;iº;#;$;@; ["'/*** `<input>` background color */;[ o;;iΩ;0;@;	o;
+	;o;;iΩ;i4;o;;iΩ;i;@;@;T;"input-bg;[ ;o;	;@;iΩ;	o;
+	;o;;iΩ;i+;o;;iΩ;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;iæ;#;$;@; ["0/*** `<input disabled>` background color */;[ o;;iø;0;@;	o;
+	;o;;iø;i=;o;;iø;i;@;@;T;"input-bg-disabled;[ ;o;0;@;iø;@;	o;
+	;o;;iø;i4;o;;iø;i';@;@;"gray-lighter;1"gray_lightero;"
+;i¡;#;$;@; ["&/*** Text color for `<input>`s */;[ o;;i¬;0;@;	o;
+	;o;;i¬;i5;o;;i¬;i;@;@;T;"input-color;[ ;o;0;@;i¬;@;	o;
+	;o;;i¬;i,;o;;i¬;i';@;@;"	gray;1"	grayo;"
+;i√;#;$;@; ["#/*** `<input>` border color */;[ o;;iƒ;0;@;	o;
+	;o;;iƒ;i4;o;;iƒ;i;@;@;T;"input-border;[ ;o;	;@;iƒ;	o;
+	;o;;iƒ;i+;o;;iƒ;i';@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;"
+;i∆;#;$;@; ["Ê/* TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+ *** Default `.form-control` border radius
+ * This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS. */;[ o;;i…;0;@;	o;
+	;o;;i…;iC;o;;i…;i;@;@;T;"input-border-radius;[ ;o;0;@;i…;@;	o;
+	;o;;i…;i:;o;;i…;i';@;@;"border-radius-base;1"border_radius_baseo;"
+;i ;#;$;@; ["0/*** Large `.form-control` border radius */;[ o;;iÀ;0;@;	o;
+	;o;;iÀ;iD;o;;iÀ;i;@;@;T;"input-border-radius-large;[ ;o;0;@;iÀ;@;	o;
+	;o;;iÀ;i;;o;;iÀ;i';@;@;"border-radius-large;1"border_radius_largeo;"
+;iÃ;#;$;@; ["0/*** Small `.form-control` border radius */;[ o;;iÕ;0;@;	o;
+	;o;;iÕ;iD;o;;iÕ;i;@;@;T;"input-border-radius-small;[ ;o;0;@;iÕ;@;	o;
+	;o;;iÕ;i;;o;;iÕ;i';@;@;"border-radius-small;1"border_radius_smallo;"
+;iœ;#;$;@; ["-/*** Border color for inputs on focus */;[ o;;i–;0;@;	o;
+	;o;;i–;i7;o;;i–;i;@;@;T;"input-border-focus;[ ;o;	;@;i–;	o;
+	;o;;i–;i.;o;;i–;i';@;@; o;%	;@;&"#66afe9; 0;'{	;(i;)iÈ;*ik;+iØo;"
+;i“;#;$;@; ["#/*** Placeholder text color */;[ o;;i”;0;@;	o;
+	;o;;i”;i4;o;;i”;i;@;@;T;"input-color-placeholder;[ ;o;	;@;i”;	o;
+	;o;;i”;i+;o;;i”;i';@;@; o;%	;@;&"	#999; 0;'{	;(i;)iô;*iô;+iôo;"
+;i’;#;$;@; ["+/*** Default `.form-control` height */;[ o;;i÷;0;@;	o;
+	;o;;i÷;ij;o;;i÷;i;@;@;T;"input-height-base;[ ;o;C;@;i÷;@;	o;
+	;o;;i÷;i`;o;;i÷;i(;@;@;D:	plus;Fo;	;@;i÷;	o;
+	;o;;i÷;i`;o;;i÷;i_;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;C;@;i÷;@;	o;
+	;o;;i÷;i];@¥;@;@;D;H;Fo;C;@;i÷;@;	o;
+	;o;;i÷;i[;o;;i÷;iA;@;@;D;E;Fo;	;@;i÷;	o;
+	;o;;i÷;i[;o;;i÷;iZ;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;0;@;i÷;@;	o;
+	;o;;i÷;iW;@¬;@;@;"padding-base-vertical;1"padding_base_vertical;Go;0;@;i÷;@;	o;
+	;o;;i÷;i=;@¥;@;@;"line-height-computed;1"line_height_computedo;"
+;i◊;#;$;@; [")/*** Large `.form-control` height */;[ o;;iÿ;0;@;	o;
+	;o;;iÿ;i|;o;;iÿ;i;@;@;T;"input-height-large;[ ;o;C;@;iÿ;@;	o;
+	;o;;iÿ;iw;o;;iÿ;i(;@;@;D;H;Fo;	;@;iÿ;	o;
+	;o;;iÿ;iw;o;;iÿ;iv;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;C;@;iÿ;@;	o;
+	;o;;iÿ;it;@·;@;@;D;H;Fo;C;@;iÿ;@;	o;
+	;o;;iÿ;ir;o;;iÿ;iW;@;@;D;E;Fo;	;@;iÿ;	o;
+	;o;;iÿ;ir;o;;iÿ;iq;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;0;@;iÿ;@;	o;
+	;o;;iÿ;in;@Ô;@;@;"padding-large-vertical;1"padding_large_vertical;Go;,;@;iÿ;@;	o;
+	;o;;iÿ;iS;@·;@;@;-0;"	ceil;.0;/[o;C;@;iÿ;@;	o;
+	;o;;iÿ;iR;o;;iÿ;i-;@;@;D;E;Fo;0;@;iÿ;@;	o;
+	;o;;iÿ;iR;o;;iÿ;i@;@;@;"line-height-large;1"line_height_large;Go;0;@;iÿ;@;	o;
+	;o;;iÿ;i=;@;@;@;"font-size-large;1"font_size_large;6o;7;8IC;9{ ;:[ ;;{ o;"
+;iŸ;#;$;@; [")/*** Small `.form-control` height */;[ o;;i⁄;0;@;	o;
+	;o;;i⁄;i};o;;i⁄;i;@;@;T;"input-height-small;[ ;o;C;@;i⁄;@;	o;
+	;o;;i⁄;ix;o;;i⁄;i(;@;@;D;H;Fo;	;@;i⁄;	o;
+	;o;;i⁄;ix;o;;i⁄;iw;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;C;@;i⁄;@;	o;
+	;o;;i⁄;iu;@!;@;@;D;H;Fo;C;@;i⁄;@;	o;
+	;o;;i⁄;is;o;;i⁄;iX;@;@;D;E;Fo;	;@;i⁄;	o;
+	;o;;i⁄;is;o;;i⁄;ir;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;0;@;i⁄;@;	o;
+	;o;;i⁄;io;@/;@;@;"padding-small-vertical;1"padding_small_vertical;Go;,;@;i⁄;@;	o;
+	;o;;i⁄;iT;@!;@;@;-0;"
+floor;.0;/[o;C;@;i⁄;@;	o;
+	;o;;i⁄;iS;o;;i⁄;i.;@;@;D;E;Fo;0;@;i⁄;@;	o;
+	;o;;i⁄;iS;o;;i⁄;iA;@;@;"line-height-small;1"line_height_small;Go;0;@;i⁄;@;	o;
+	;o;;i⁄;i>;@D;@;@;"font-size-small;1"font_size_small;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i‹;#;$;@; ["!/*** `.form-group` margin */;[ o;;i›;0;@;	o;
+	;o;;i›;i4;o;;i›;i;@;@;T;"form-group-margin-bottom;[ ;o;	;@;i›;	o;
+	;o;;i›;i+;o;;i›;i';@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;;iﬂ;0;@;	o;
+	;o;;iﬂ;i:;o;;iﬂ;i;@;@;T;"legend-color;[ ;o;0;@;iﬂ;@;	o;
+	;o;;iﬂ;i1;o;;iﬂ;i';@;@;"gray-dark;1"gray_darko;;i‡;0;@;	o;
+	;o;;i‡;i7;o;;i‡;i;@;@;T;"legend-border-color;[ ;o;	;@;i‡;	o;
+	;o;;i‡;i.;o;;i‡;i';@;@; o;%	;@;&"#e5e5e5; 0;'{	;(i;)iÂ;*iÂ;+iÂo;"
+;i‚;#;$;@; ["6/*** Background color for textual input addons */;[ o;;i„;0;@;	o;
+	;o;;i„;i=;o;;i„;i;@;@;T;"input-group-addon-bg;[ ;o;0;@;i„;@;	o;
+	;o;;i„;i4;o;;i„;i';@;@;"gray-lighter;1"gray_lightero;"
+;i‰;#;$;@; ["2/*** Border color for textual input addons */;[ o;;iÂ;0;@;	o;
+	;o;;iÂ;i=;o;;iÂ;i;@;@;T;"#input-group-addon-border-color;[ ;o;0;@;iÂ;@;	o;
+	;o;;iÂ;i4;o;;iÂ;i';@;@;"input-border;1"input_bordero;"
+;iÁ;#;$;@; [";/*** Disabled cursor for form controls and buttons. */;[ o;;iË;0;@;	o;
+	;o;;iË;i;;o;;iË;i;@;@;T;"cursor-disabled;[ ;o;	;@;iË;	o;
+	;o;;iË;i2;o;;iË;i';@;@; o;<;#;=;@; "not-allowedo;"
+;iÎ;#;$;@; ["D/*== Dropdowns
+ *
+ *## Dropdown menu container and contents. */;[ o;"
+;iÔ;#;$;@; ["./*** Background for the dropdown menu. */;[ o;;i;0;@;	o;
+	;o;;i;i4;o;;i;i;@;@;T;"dropdown-bg;[ ;o;	;@;i;	o;
+	;o;;i;i+;o;;i;i';@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;iÒ;#;$;@; ["*/*** Dropdown menu `border-color`. */;[ o;;iÚ;0;@;	o;
+	;o;;iÚ;i?;o;;iÚ;i;@;@;T;"dropdown-border;[ ;o;,;@;iÚ;@;	o;
+	;o;;iÚ;i6;o;;iÚ;i';@;@;-0;"	rgba;.0;/[	o;	;@;iÚ;	o;
+	;o;;iÚ;i-;o;;iÚ;i,;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;iÚ;	o;
+	;o;;iÚ;i/;o;;iÚ;i.;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;iÚ;	o;
+	;o;;iÚ;i1;o;;iÚ;i0;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;iÚ;	o;
+	;o;;iÚ;i5;o;;iÚ;i2;@;@; o;2
+;@;3"	0.15;4@I; f0.14999999999999999 33;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;"
+;iÛ;#;$;@; ["6/*** Dropdown menu `border-color` **for IE8**. */;[ o;;iÙ;0;@;	o;
+	;o;;iÙ;i4;o;;iÙ;i;@;@;T;"dropdown-fallback-border;[ ;o;	;@;iÙ;	o;
+	;o;;iÙ;i+;o;;iÙ;i';@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;"
+;iı;#;$;@; ["6/*** Divider color for between dropdown items. */;[ o;;iˆ;0;@;	o;
+	;o;;iˆ;i7;o;;iˆ;i;@;@;T;"dropdown-divider-bg;[ ;o;	;@;iˆ;	o;
+	;o;;iˆ;i.;o;;iˆ;i';@;@; o;%	;@;&"#e5e5e5; 0;'{	;(i;)iÂ;*iÂ;+iÂo;"
+;i¯;#;$;@; ["&/*** Dropdown link text color. */;[ o;;i˘;0;@;	o;
+	;o;;i˘;i:;o;;i˘;i;@;@;T;"dropdown-link-color;[ ;o;0;@;i˘;@;	o;
+	;o;;i˘;i1;o;;i˘;i';@;@;"gray-dark;1"gray_darko;"
+;i˙;#;$;@; [",/*** Hover color for dropdown links. */;[ o;;i˚;0;@;	o;
+	;o;;i˚;iF;o;;i˚;i;@;@;T;"dropdown-link-hover-color;[ ;o;,;@;i˚;@;	o;
+	;o;;i˚;i=;o;;i˚;i';@;@;-0;"darken;.0;/[o;0;@;i˚;@;	o;
+	;o;;i˚;i8;o;;i˚;i.;@;@;"gray-dark;1"gray_darko;	;@;i˚;	o;
+	;o;;i˚;i<;o;;i˚;i:;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i¸;#;$;@; ["1/*** Hover background for dropdown links. */;[ o;;i˝;0;@;	o;
+	;o;;i˝;i7;o;;i˝;i;@;@;T;"dropdown-link-hover-bg;[ ;o;	;@;i˝;	o;
+	;o;;i˝;i.;o;;i˝;i';@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;"
+;iˇ;#;$;@; ["2/*** Active dropdown menu item text color. */;[ o;;i ;0;@;	o;
+	;o;;i ;iG;o;;i ;i;@;@;T;"dropdown-link-active-color;[ ;o;0;@;i ;@;	o;
+	;o;;i ;i>;o;;i ;i';@;@;"component-active-color;1"component_active_coloro;"
+;i;#;$;@; ["8/*** Active dropdown menu item background color. */;[ o;;i;0;@;	o;
+	;o;;i;iD;o;;i;i;@;@;T;"dropdown-link-active-bg;[ ;o;0;@;i;@;	o;
+	;o;;i;i;;o;;i;i';@;@;"component-active-bg;1"component_active_bgo;"
+;i;#;$;@; [":/*** Disabled dropdown menu item background color. */;[ o;;i;0;@;	o;
+	;o;;i;i;;o;;i;i;@;@;T;"!dropdown-link-disabled-color;[ ;o;0;@;i;@;	o;
+	;o;;i;i2;o;;i;i';@;@;"gray-light;1"gray_lighto;"
+;i;#;$;@; [":/*** Text color for headers within dropdown menus. */;[ o;;i;0;@;	o;
+	;o;;i;i;;o;;i;i;@;@;T;"dropdown-header-color;[ ;o;0;@;i;@;	o;
+	;o;;i;i2;o;;i;i';@;@;"gray-light;1"gray_lighto;"
+;i
+;#;$;@; ["</*** Deprecated `$dropdown-caret-color` as of v3.1.0 */;[ o;;i;0;@;	o;
+	;o;;i;i4;o;;i;i;@;@;T;"dropdown-caret-color;[ ;o;	;@;i;	o;
+	;o;;i;i+;o;;i;i';@;@; o;%	;@;&"	#000; 0;'{	;(i;)i ;*i ;+i o;"
+;i;#;$;@; [" /*-- Z-index master list
+ *
+ * Warning: Avoid customizing these values. They're used for a bird's eye view
+ * of components dependent on the z-axis and are designed to all work together.
+ *
+ * Note: These variables are not generated into the Customizer. */;[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-navbar;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1000;4@I; iË;5[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-dropdown;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1000;4@I; iË;5[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-popover;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1060;4@I; i$;5[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-tooltip;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1070;4@I; i.;5[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-navbar-fixed;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1030;4@I; i;5[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-modal-background;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1040;4@I; i;5[ o;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"zindex-modal;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i!;@;@; o;2
+;@;3"	1050;4@I; i;5[ o;"
+;i;#;$;@; ["Ü/*== Media queries breakpoints
+ *
+ *## Define the breakpoints at which your layout will change, adapting to different screen sizes. */;[ o;"
+;i";#;$;@; ["O/* Extra small screen / phone
+ *** Deprecated `$screen-xs` as of v3.0.1 */;[ o;;i$;0;@;	o;
+	;o;;i$;i1;o;;i$;i;@;@;T;"screen-xs;[ ;o;	;@;i$;	o;
+	;o;;i$;i(;o;;i$;i#;@;@; o;2
+;@;3"
+480px;4[ ; i‡;5["pxo;"
+;i%;#;$;@; ["5/*** Deprecated `$screen-xs-min` as of v3.2.0 */;[ o;;i&;0;@;	o;
+	;o;;i&;i6;o;;i&;i;@;@;T;"screen-xs-min;[ ;o;0;@;i&;@;	o;
+	;o;;i&;i-;o;;i&;i#;@;@;"screen-xs;1"screen_xso;"
+;i';#;$;@; ["4/*** Deprecated `$screen-phone` as of v3.0.1 */;[ o;;i(;0;@;	o;
+	;o;;i(;i:;o;;i(;i;@;@;T;"screen-phone;[ ;o;0;@;i(;@;	o;
+	;o;;i(;i1;o;;i(;i#;@;@;"screen-xs-min;1"screen_xs_mino;"
+;i*;#;$;@; ["J/* Small screen / tablet
+ *** Deprecated `$screen-sm` as of v3.0.1 */;[ o;;i,;0;@;	o;
+	;o;;i,;i1;o;;i,;i;@;@;T;"screen-sm;[ ;o;	;@;i,;	o;
+	;o;;i,;i(;o;;i,;i#;@;@; o;2
+;@;3"
+768px;4[ ; i ;5["pxo;;i-;0;@;	o;
+	;o;;i-;i6;o;;i-;i;@;@;T;"screen-sm-min;[ ;o;0;@;i-;@;	o;
+	;o;;i-;i-;o;;i-;i#;@;@;"screen-sm;1"screen_smo;"
+;i.;#;$;@; ["5/*** Deprecated `$screen-tablet` as of v3.0.1 */;[ o;;i/;0;@;	o;
+	;o;;i/;i:;o;;i/;i;@;@;T;"screen-tablet;[ ;o;0;@;i/;@;	o;
+	;o;;i/;i1;o;;i/;i#;@;@;"screen-sm-min;1"screen_sm_mino;"
+;i1;#;$;@; ["L/* Medium screen / desktop
+ *** Deprecated `$screen-md` as of v3.0.1 */;[ o;;i3;0;@;	o;
+	;o;;i3;i1;o;;i3;i;@;@;T;"screen-md;[ ;o;	;@;i3;	o;
+	;o;;i3;i(;o;;i3;i#;@;@; o;2
+;@;3"
+992px;4[ ; i‡;5["pxo;;i4;0;@;	o;
+	;o;;i4;i6;o;;i4;i;@;@;T;"screen-md-min;[ ;o;0;@;i4;@;	o;
+	;o;;i4;i-;o;;i4;i#;@;@;"screen-md;1"screen_mdo;"
+;i5;#;$;@; ["6/*** Deprecated `$screen-desktop` as of v3.0.1 */;[ o;;i6;0;@;	o;
+	;o;;i6;i:;o;;i6;i;@;@;T;"screen-desktop;[ ;o;0;@;i6;@;	o;
+	;o;;i6;i1;o;;i6;i#;@;@;"screen-md-min;1"screen_md_mino;"
+;i8;#;$;@; ["P/* Large screen / wide desktop
+ *** Deprecated `$screen-lg` as of v3.0.1 */;[ o;;i:;0;@;	o;
+	;o;;i:;i2;o;;i:;i;@;@;T;"screen-lg;[ ;o;	;@;i:;	o;
+	;o;;i:;i);o;;i:;i#;@;@; o;2
+;@;3"1200px;4[ ; i∞;5["pxo;;i;;0;@;	o;
+	;o;;i;;i6;o;;i;;i;@;@;T;"screen-lg-min;[ ;o;0;@;i;;@;	o;
+	;o;;i;;i-;o;;i;;i#;@;@;"screen-lg;1"screen_lgo;"
+;i<;#;$;@; ["9/*** Deprecated `$screen-lg-desktop` as of v3.0.1 */;[ o;;i=;0;@;	o;
+	;o;;i=;i:;o;;i=;i;@;@;T;"screen-lg-desktop;[ ;o;0;@;i=;@;	o;
+	;o;;i=;i1;o;;i=;i#;@;@;"screen-lg-min;1"screen_lg_mino;"
+;i?;#;$;@; ["J/* So media queries don't overlap when required, provide a maximum */;[ o;;i@;0;@;	o;
+	;o;;i@;i@;o;;i@;i;@;@;T;"screen-xs-max;[ ;o;C;@;i@;@;	o;
+	;o;;i@;i6;o;;i@;i$;@;@;D:
+minus;Fo;	;@;i@;	o;
+	;o;;i@;i6;o;;i@;i5;@;@; o;2
+;@;3"1;4@I; i;5[ ;Go;0;@;i@;@;	o;
+	;o;;i@;i2;@›
+;@;@;"screen-sm-min;1"screen_sm_mino;;iA;0;@;	o;
+	;o;;iA;i@;o;;iA;i;@;@;T;"screen-sm-max;[ ;o;C;@;iA;@;	o;
+	;o;;iA;i6;o;;iA;i$;@;@;D;I;Fo;	;@;iA;	o;
+	;o;;iA;i6;o;;iA;i5;@;@; o;2
+;@;3"1;4@I; i;5[ ;Go;0;@;iA;@;	o;
+	;o;;iA;i2;@Û
+;@;@;"screen-md-min;1"screen_md_mino;;iB;0;@;	o;
+	;o;;iB;i@;o;;iB;i;@;@;T;"screen-md-max;[ ;o;C;@;iB;@;	o;
+	;o;;iB;i6;o;;iB;i$;@;@;D;I;Fo;	;@;iB;	o;
+	;o;;iB;i6;o;;iB;i5;@;@; o;2
+;@;3"1;4@I; i;5[ ;Go;0;@;iB;@;	o;
+	;o;;iB;i2;@	;@;@;"screen-lg-min;1"screen_lg_mino;"
+;iE;#;$;@; ["D/*== Grid system
+ *
+ *## Define your custom responsive grid. */;[ o;"
+;iI;#;$;@; ["+/*** Number of columns in the grid. */;[ o;;iJ;0;@;	o;
+	;o;;iJ;i-;o;;iJ;i;@;@;T;"grid-columns;[ ;o;	;@;iJ;	o;
+	;o;;iJ;i$;o;;iJ;i";@;@; o;2
+;@;3"12;4@I; i;5[ o;"
+;iK;#;$;@; ["R/*** Padding between columns. Gets divided in half for the left and right. */;[ o;;iL;0;@;	o;
+	;o;;iL;i/;o;;iL;i;@;@;T;"grid-gutter-width;[ ;o;	;@;iL;	o;
+	;o;;iL;i&;o;;iL;i";@;@; o;2
+;@;3"	30px;4[ ; i#;5["pxo;"
+;iM;#;$;@; ["N/* Navbar collapse
+ *** Point at which the navbar becomes uncollapsed. */;[ o;;iO;0;@;	o;
+	;o;;iO;i9;o;;iO;i;@;@;T;"grid-float-breakpoint;[ ;o;0;@;iO;@;	o;
+	;o;;iO;i0;o;;iO;i";@;@;"screen-sm-min;1"screen_sm_mino;"
+;iP;#;$;@; ["9/*** Point at which the navbar begins collapsing. */;[ o;;iQ;0;@;	o;
+	;o;;iQ;iG;o;;iQ;i;@;@;T;"grid-float-breakpoint-max;[ ;o;C;@;iQ;@;	o;
+	;o;;iQ;i=;o;;iQ;i#;@;@;D;I;Fo;	;@;iQ;	o;
+	;o;;iQ;i=;o;;iQ;i<;@;@; o;2
+;@;3"1;4@I; i;5[ ;Go;0;@;iQ;@;	o;
+	;o;;iQ;i9;@[;@;@;"grid-float-breakpoint;1"grid_float_breakpointo;"
+;iT;#;$;@; ["i/*== Container sizes
+ *
+ *## Define the maximum width of `.container` for different screen sizes. */;[ o;"
+;iX;#;$;@; [" /* Small screen / tablet */;[ o;;iY;0;@;	o;
+	;o;;iY;iJ;o;;iY;i;@;@;T;"container-tablet;[ ;o;C;@;iY;@;	o;
+	;o;;iY;i@;o;;iY;i&;@;@;D;H;Fo;0;@;iY;@;	o;
+	;o;;iY;i@;o;;iY;i.;@;@;"grid-gutter-width;1"grid_gutter_width;Go;	;@;iY;	o;
+	;o;;iY;i+;@y;@;@; o;2	;@;4[ ; i–;5["pxo;"
+;iZ;#;$;@; [")/*** For `$screen-sm-min` and up. */;[ o;;i[;0;@;	o;
+	;o;;i[;i?;o;;i[;i;@;@;T;"container-sm;[ ;o;0;@;i[;@;	o;
+	;o;;i[;i6;o;;i[;i%;@;@;"container-tablet;1"container_tableto;"
+;i];#;$;@; [""/* Medium screen / desktop */;[ o;;i^;0;@;	o;
+	;o;;i^;iJ;o;;i^;i;@;@;T;"container-desktop;[ ;o;C;@;i^;@;	o;
+	;o;;i^;i@;o;;i^;i&;@;@;D;H;Fo;0;@;i^;@;	o;
+	;o;;i^;i@;o;;i^;i.;@;@;"grid-gutter-width;1"grid_gutter_width;Go;	;@;i^;	o;
+	;o;;i^;i+;@§;@;@; o;2	;@;4[ ; i¨;5["pxo;"
+;i_;#;$;@; [")/*** For `$screen-md-min` and up. */;[ o;;i`;0;@;	o;
+	;o;;i`;i@;o;;i`;i;@;@;T;"container-md;[ ;o;0;@;i`;@;	o;
+	;o;;i`;i7;o;;i`;i%;@;@;"container-desktop;1"container_desktopo;"
+;ib;#;$;@; ["&/* Large screen / wide desktop */;[ o;;ic;0;@;	o;
+	;o;;ic;iK;o;;ic;i;@;@;T;"container-large-desktop;[ ;o;C;@;ic;@;	o;
+	;o;;ic;iA;o;;ic;i&;@;@;D;H;Fo;0;@;ic;@;	o;
+	;o;;ic;iA;o;;ic;i/;@;@;"grid-gutter-width;1"grid_gutter_width;Go;	;@;ic;	o;
+	;o;;ic;i,;@œ;@;@; o;2	;@;4[ ; it;5["pxo;"
+;id;#;$;@; [")/*** For `$screen-lg-min` and up. */;[ o;;ie;0;@;	o;
+	;o;;ie;iF;o;;ie;i;@;@;T;"container-lg;[ ;o;0;@;ie;@;	o;
+	;o;;ie;i=;o;;ie;i%;@;@;"container-large-desktop;1"container_large_desktopo;"
+;ih;#;$;@; ["/*== Navbar
+ *
+ *## */;[ o;"
+;il;#;$;@; ["/* Basics of a navbar */;[ o;;im;0;@;	o;
+	;o;;im;i6;o;;im;i;@;@;T;"navbar-height;[ ;o;	;@;im;	o;
+	;o;;im;i-;o;;im;i);@;@; o;2
+;@;3"	50px;4[ ; i7;5["pxo;;in;0;@;	o;
+	;o;;in;iG;o;;in;i;@;@;T;"navbar-margin-bottom;[ ;o;0;@;in;@;	o;
+	;o;;in;i>;o;;in;i);@;@;"line-height-computed;1"line_height_computedo;;io;0;@;	o;
+	;o;;io;iE;o;;io;i;@;@;T;"navbar-border-radius;[ ;o;0;@;io;@;	o;
+	;o;;io;i<;o;;io;i);@;@;"border-radius-base;1"border_radius_baseo;;ip;0;@;	o;
+	;o;;ip;iQ;o;;ip;i;@;@;T;"navbar-padding-horizontal;[ ;o;,;@;ip;@;	o;
+	;o;;ip;iH;o;;ip;i);@;@;-0;"
+floor;.0;/[o;C;@;ip;@;	o;
+	;o;;ip;iF;o;;ip;i0;@;@;D:div;Fo;	;@;ip;	o;
+	;o;;ip;iF;o;;ip;iE;@;@; o;2
+;@;3"2;4@I; i;5[ ;Go;0;@;ip;@;	o;
+	;o;;ip;iB;@+;@;@;"grid-gutter-width;1"grid_gutter_width;6o;7;8IC;9{ ;:[ ;;{ o;;iq;0;@;	o;
+	;o;;iq;i`;o;;iq;i;@;@;T;"navbar-padding-vertical;[ ;o;C;@;iq;@;	o;
+	;o;;iq;iV;o;;iq;i+;@;@;D;J;Fo;	;@;iq;	o;
+	;o;;iq;iV;o;;iq;iU;@;@; o;2	;@;4@I; i;5[ ;Go;C;@;iq;@;	o;
+	;o;;iq;iQ;@E;@;@;D;I;Fo;0;@;iq;@;	o;
+	;o;;iq;iQ;o;;iq;i<;@;@;"line-height-computed;1"line_height_computed;Go;0;@;iq;@;	o;
+	;o;;iq;i9;@E;@;@;"navbar-height;1"navbar_heighto;;ir;0;@;	o;
+	;o;;ir;i7;o;;ir;i;@;@;T;"navbar-collapse-max-height;[ ;o;	;@;ir;	o;
+	;o;;ir;i.;o;;ir;i);@;@; o;2
+;@;3"
+340px;4[ ; iT;5["pxo;;it;0;@;	o;
+	;o;;it;i6;o;;it;i;@;@;T;"navbar-default-color;[ ;o;	;@;it;	o;
+	;o;;it;i-;o;;it;i);@;@; o;%	;@;&"	#777; 0;'{	;(i;)i|;*i|;+i|o;;iu;0;@;	o;
+	;o;;iu;i9;o;;iu;i;@;@;T;"navbar-default-bg;[ ;o;	;@;iu;	o;
+	;o;;iu;i0;o;;iu;i);@;@; o;%	;@;&"#f8f8f8; 0;'{	;(i;)i¯;*i¯;+i¯o;;iv;0;@;	o;
+	;o;;iv;iR;o;;iv;i;@;@;T;"navbar-default-border;[ ;o;,;@;iv;@;	o;
+	;o;;iv;iI;o;;iv;i);@;@;-0;"darken;.0;/[o;0;@;iv;@;	o;
+	;o;;iv;iB;o;;iv;i0;@;@;"navbar-default-bg;1"navbar_default_bgo;	;@;iv;	o;
+	;o;;iv;iH;o;;iv;iD;@;@; o;2
+;@;3"	6.5%;4[ ; f6.5;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;ix;#;$;@; ["/* Navbar links */;[ o;;iy;0;@;	o;
+	;o;;iy;i>;o;;iy;i;@;@;T;"navbar-default-link-color;[ ;o;	;@;iy;	o;
+	;o;;iy;i5;o;;iy;i1;@;@; o;%	;@;&"	#777; 0;'{	;(i;)i|;*i|;+i|o;;iz;0;@;	o;
+	;o;;iz;i>;o;;iz;i;@;@;T;"$navbar-default-link-hover-color;[ ;o;	;@;iz;	o;
+	;o;;iz;i5;o;;iz;i1;@;@; o;%	;@;&"	#333; 0;'{	;(i;)i8;*i8;+i8o;;i{;0;@;	o;
+	;o;;i{;iE;o;;i{;i;@;@;T;"!navbar-default-link-hover-bg;[ ;o;	;@;i{;	o;
+	;o;;i{;i<;o;;i{;i1;@;@; o;%	;@;&"transparent; 0;'{	;(@L;)i ;*i ;+i o;;i|;0;@;	o;
+	;o;;i|;i>;o;;i|;i;@;@;T;"%navbar-default-link-active-color;[ ;o;	;@;i|;	o;
+	;o;;i|;i5;o;;i|;i1;@;@; o;%	;@;&"	#555; 0;'{	;(i;)iZ;*iZ;+iZo;;i};0;@;	o;
+	;o;;i};iZ;o;;i};i;@;@;T;""navbar-default-link-active-bg;[ ;o;,;@;i};@;	o;
+	;o;;i};iQ;o;;i};i1;@;@;-0;"darken;.0;/[o;0;@;i};@;	o;
+	;o;;i};iJ;o;;i};i8;@;@;"navbar-default-bg;1"navbar_default_bgo;	;@;i};	o;
+	;o;;i};iP;o;;i};iL;@;@; o;2
+;@;3"	6.5%;4[ ; f6.5;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i~;0;@;	o;
+	;o;;i~;i>;o;;i~;i;@;@;T;"'navbar-default-link-disabled-color;[ ;o;	;@;i~;	o;
+	;o;;i~;i5;o;;i~;i1;@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;;i;0;@;	o;
+	;o;;i;iE;o;;i;i;@;@;T;"$navbar-default-link-disabled-bg;[ ;o;	;@;i;	o;
+	;o;;i;i<;o;;i;i1;@;@; o;%	;@;&"transparent; 0;'{	;(@L;)i ;*i ;+i o;"
+;iÅ;#;$;@; ["/* Navbar brand label */;[ o;;iÇ;0;@;	o;
+	;o;;iÇ;iT;o;;iÇ;i;@;@;T;"navbar-default-brand-color;[ ;o;0;@;iÇ;@;	o;
+	;o;;iÇ;iK;o;;iÇ;i1;@;@;"navbar-default-link-color;1"navbar_default_link_coloro;;iÉ;0;@;	o;
+	;o;;iÉ;ib;o;;iÉ;i;@;@;T;"%navbar-default-brand-hover-color;[ ;o;,;@;iÉ;@;	o;
+	;o;;iÉ;iY;o;;iÉ;i1;@;@;-0;"darken;.0;/[o;0;@;iÉ;@;	o;
+	;o;;iÉ;iS;o;;iÉ;i8;@;@;"navbar-default-brand-color;1"navbar_default_brand_coloro;	;@;iÉ;	o;
+	;o;;iÉ;iX;o;;iÉ;iU;@;@; o;2
+;@;3"10%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;iÑ;0;@;	o;
+	;o;;iÑ;iE;o;;iÑ;i;@;@;T;""navbar-default-brand-hover-bg;[ ;o;	;@;iÑ;	o;
+	;o;;iÑ;i<;o;;iÑ;i1;@;@; o;%	;@;&"transparent; 0;'{	;(@L;)i ;*i ;+i o;"
+;iÜ;#;$;@; ["/* Navbar toggle */;[ o;;iá;0;@;	o;
+	;o;;iá;i>;o;;iá;i;@;@;T;"#navbar-default-toggle-hover-bg;[ ;o;	;@;iá;	o;
+	;o;;iá;i5;o;;iá;i1;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;ià;0;@;	o;
+	;o;;ià;i>;o;;ià;i;@;@;T;"&navbar-default-toggle-icon-bar-bg;[ ;o;	;@;ià;	o;
+	;o;;ià;i5;o;;ià;i1;@;@; o;%	;@;&"	#888; 0;'{	;(i;)ià;*ià;+iào;;iâ;0;@;	o;
+	;o;;iâ;i>;o;;iâ;i;@;@;T;"'navbar-default-toggle-border-color;[ ;o;	;@;iâ;	o;
+	;o;;iâ;i5;o;;iâ;i1;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;"
+;iå;#;$;@; ["=/*=== Inverted navbar
+ * Reset inverted navbar basics */;[ o;;ié;0;@;	o;
+	;o;;ié;iT;o;;ié;i;@;@;T;"navbar-inverse-color;[ ;o;,;@;ié;@;	o;
+	;o;;ié;iK;o;;ié;i2;@;@;-0;"lighten;.0;/[o;0;@;ié;@;	o;
+	;o;;ié;iE;o;;ié;i:;@;@;"gray-light;1"gray_lighto;	;@;ié;	o;
+	;o;;ié;iJ;o;;ié;iG;@;@; o;2
+;@;3"15%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;iè;0;@;	o;
+	;o;;iè;i?;o;;iè;i;@;@;T;"navbar-inverse-bg;[ ;o;	;@;iè;	o;
+	;o;;iè;i6;o;;iè;i2;@;@; o;%	;@;&"	#222; 0;'{	;(i;)i';*i';+i'o;;iê;0;@;	o;
+	;o;;iê;iZ;o;;iê;i;@;@;T;"navbar-inverse-border;[ ;o;,;@;iê;@;	o;
+	;o;;iê;iQ;o;;iê;i2;@;@;-0;"darken;.0;/[o;0;@;iê;@;	o;
+	;o;;iê;iK;o;;iê;i9;@;@;"navbar-inverse-bg;1"navbar_inverse_bgo;	;@;iê;	o;
+	;o;;iê;iP;o;;iê;iM;@;@; o;2
+;@;3"10%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;ií;#;$;@; [" /* Inverted navbar links */;[ o;;iì;0;@;	o;
+	;o;;iì;iT;o;;iì;i;@;@;T;"navbar-inverse-link-color;[ ;o;,;@;iì;@;	o;
+	;o;;iì;iK;o;;iì;i2;@;@;-0;"lighten;.0;/[o;0;@;iì;@;	o;
+	;o;;iì;iE;o;;iì;i:;@;@;"gray-light;1"gray_lighto;	;@;iì;	o;
+	;o;;iì;iJ;o;;iì;iG;@;@; o;2
+;@;3"15%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;iî;0;@;	o;
+	;o;;iî;i?;o;;iî;i;@;@;T;"$navbar-inverse-link-hover-color;[ ;o;	;@;iî;	o;
+	;o;;iî;i6;o;;iî;i2;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;iï;0;@;	o;
+	;o;;iï;iF;o;;iï;i;@;@;T;"!navbar-inverse-link-hover-bg;[ ;o;	;@;iï;	o;
+	;o;;iï;i=;o;;iï;i2;@;@; o;%	;@;&"transparent; 0;'{	;(@L;)i ;*i ;+i o;;iñ;0;@;	o;
+	;o;;iñ;i[;o;;iñ;i;@;@;T;"%navbar-inverse-link-active-color;[ ;o;0;@;iñ;@;	o;
+	;o;;iñ;iR;o;;iñ;i2;@;@;"$navbar-inverse-link-hover-color;1"$navbar_inverse_link_hover_coloro;;ió;0;@;	o;
+	;o;;ió;iZ;o;;ió;i;@;@;T;""navbar-inverse-link-active-bg;[ ;o;,;@;ió;@;	o;
+	;o;;ió;iQ;o;;ió;i2;@;@;-0;"darken;.0;/[o;0;@;ió;@;	o;
+	;o;;ió;iK;o;;ió;i9;@;@;"navbar-inverse-bg;1"navbar_inverse_bgo;	;@;ió;	o;
+	;o;;ió;iP;o;;ió;iM;@;@; o;2
+;@;3"10%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;iò;0;@;	o;
+	;o;;iò;i?;o;;iò;i;@;@;T;"'navbar-inverse-link-disabled-color;[ ;o;	;@;iò;	o;
+	;o;;iò;i6;o;;iò;i2;@;@; o;%	;@;&"	#444; 0;'{	;(i;)iI;*iI;+iIo;;iô;0;@;	o;
+	;o;;iô;iF;o;;iô;i;@;@;T;"$navbar-inverse-link-disabled-bg;[ ;o;	;@;iô;	o;
+	;o;;iô;i=;o;;iô;i2;@;@; o;%	;@;&"transparent; 0;'{	;(@L;)i ;*i ;+i o;"
+;iõ;#;$;@; ["&/* Inverted navbar brand label */;[ o;;iú;0;@;	o;
+	;o;;iú;iU;o;;iú;i;@;@;T;"navbar-inverse-brand-color;[ ;o;0;@;iú;@;	o;
+	;o;;iú;iL;o;;iú;i2;@;@;"navbar-inverse-link-color;1"navbar_inverse_link_coloro;;iù;0;@;	o;
+	;o;;iù;i?;o;;iù;i;@;@;T;"%navbar-inverse-brand-hover-color;[ ;o;	;@;iù;	o;
+	;o;;iù;i6;o;;iù;i2;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;iû;0;@;	o;
+	;o;;iû;iF;o;;iû;i;@;@;T;""navbar-inverse-brand-hover-bg;[ ;o;	;@;iû;	o;
+	;o;;iû;i=;o;;iû;i2;@;@; o;%	;@;&"transparent; 0;'{	;(@L;)i ;*i ;+i o;"
+;i†;#;$;@; ["!/* Inverted navbar toggle */;[ o;;i°;0;@;	o;
+	;o;;i°;i?;o;;i°;i;@;@;T;"#navbar-inverse-toggle-hover-bg;[ ;o;	;@;i°;	o;
+	;o;;i°;i6;o;;i°;i2;@;@; o;%	;@;&"	#333; 0;'{	;(i;)i8;*i8;+i8o;;i¢;0;@;	o;
+	;o;;i¢;i?;o;;i¢;i;@;@;T;"&navbar-inverse-toggle-icon-bar-bg;[ ;o;	;@;i¢;	o;
+	;o;;i¢;i6;o;;i¢;i2;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i£;0;@;	o;
+	;o;;i£;i?;o;;i£;i;@;@;T;"'navbar-inverse-toggle-border-color;[ ;o;	;@;i£;	o;
+	;o;;i£;i6;o;;i£;i2;@;@; o;%	;@;&"	#333; 0;'{	;(i;)i8;*i8;+i8o;"
+;i¶;#;$;@; ["/*== Navs
+ *
+ *## */;[ o;"
+;i™;#;$;@; ["/*=== Shared nav styles */;[ o;;i´;0;@;	o;
+	;o;;i´;iD;o;;i´;i;@;@;T;"nav-link-padding;[ ;o;>;@;i´;@;	o;
+	;o;;i´;i<;o;;i´;i2;@;@;?:
+space;A[o;	;@;i´;	o;
+	;o;;i´;i6;o;;i´;i2;@;@; o;2
+;@;3"	10px;4[ ; i;5["pxo;	;@;i´;	o;
+	;o;;i´;i;;o;;i´;i7;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;;i¨;0;@;	o;
+	;o;;i¨;iH;o;;i¨;i;@;@;T;"nav-link-hover-bg;[ ;o;0;@;i¨;@;	o;
+	;o;;i¨;i?;o;;i¨;i2;@;@;"gray-lighter;1"gray_lightero;;iÆ;0;@;	o;
+	;o;;iÆ;iF;o;;iÆ;i;@;@;T;"nav-disabled-link-color;[ ;o;0;@;iÆ;@;	o;
+	;o;;iÆ;i=;o;;iÆ;i2;@;@;"gray-light;1"gray_lighto;;iØ;0;@;	o;
+	;o;;iØ;iF;o;;iØ;i;@;@;T;""nav-disabled-link-hover-color;[ ;o;0;@;iØ;@;	o;
+	;o;;iØ;i=;o;;iØ;i2;@;@;"gray-light;1"gray_lighto;"
+;i±;#;$;@; ["/*== Tabs */;[ o;;i≤;0;@;	o;
+	;o;;i≤;i?;o;;i≤;i;@;@;T;"nav-tabs-border-color;[ ;o;	;@;i≤;	o;
+	;o;;i≤;i6;o;;i≤;i2;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;i¥;0;@;	o;
+	;o;;i¥;iH;o;;i¥;i;@;@;T;"%nav-tabs-link-hover-border-color;[ ;o;0;@;i¥;@;	o;
+	;o;;i¥;i?;o;;i¥;i2;@;@;"gray-lighter;1"gray_lightero;;i∂;0;@;	o;
+	;o;;i∂;iC;o;;i∂;i;@;@;T;""nav-tabs-active-link-hover-bg;[ ;o;0;@;i∂;@;	o;
+	;o;;i∂;i:;o;;i∂;i2;@;@;"body-bg;1"body_bgo;;i∑;0;@;	o;
+	;o;;i∑;i@;o;;i∑;i;@;@;T;"%nav-tabs-active-link-hover-color;[ ;o;0;@;i∑;@;	o;
+	;o;;i∑;i7;o;;i∑;i2;@;@;"	gray;1"	grayo;;i∏;0;@;	o;
+	;o;;i∏;i?;o;;i∏;i;@;@;T;",nav-tabs-active-link-hover-border-color;[ ;o;	;@;i∏;	o;
+	;o;;i∏;i6;o;;i∏;i2;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;i∫;0;@;	o;
+	;o;;i∫;iE;o;;i∫;i;@;@;T;")nav-tabs-justified-link-border-color;[ ;o;	;@;i∫;	o;
+	;o;;i∫;i<;o;;i∫;i8;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;iª;0;@;	o;
+	;o;;iª;iI;o;;iª;i;@;@;T;"0nav-tabs-justified-active-link-border-color;[ ;o;0;@;iª;@;	o;
+	;o;;iª;i@;o;;iª;i8;@;@;"body-bg;1"body_bgo;"
+;iΩ;#;$;@; ["/*== Pills */;[ o;;iæ;0;@;	o;
+	;o;;iæ;iN;o;;iæ;i;@;@;T;"nav-pills-border-radius;[ ;o;0;@;iæ;@;	o;
+	;o;;iæ;iE;o;;iæ;i2;@;@;"border-radius-base;1"border_radius_baseo;;iø;0;@;	o;
+	;o;;iø;iO;o;;iø;i;@;@;T;"#nav-pills-active-link-hover-bg;[ ;o;0;@;iø;@;	o;
+	;o;;iø;iF;o;;iø;i2;@;@;"component-active-bg;1"component_active_bgo;;i¿;0;@;	o;
+	;o;;i¿;iR;o;;i¿;i;@;@;T;"&nav-pills-active-link-hover-color;[ ;o;0;@;i¿;@;	o;
+	;o;;i¿;iI;o;;i¿;i2;@;@;"component-active-color;1"component_active_coloro;"
+;i√;#;$;@; ["/*== Pagination
+ *
+ *## */;[ o;;i«;0;@;	o;
+	;o;;i«;iA;o;;i«;i;@;@;T;"pagination-color;[ ;o;0;@;i«;@;	o;
+	;o;;i«;i8;o;;i«;i-;@;@;"link-color;1"link_coloro;;i»;0;@;	o;
+	;o;;i»;i:;o;;i»;i;@;@;T;"pagination-bg;[ ;o;	;@;i»;	o;
+	;o;;i»;i1;o;;i»;i-;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i…;0;@;	o;
+	;o;;i…;i:;o;;i…;i;@;@;T;"pagination-border;[ ;o;	;@;i…;	o;
+	;o;;i…;i1;o;;i…;i-;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;iÀ;0;@;	o;
+	;o;;iÀ;iG;o;;iÀ;i;@;@;T;"pagination-hover-color;[ ;o;0;@;iÀ;@;	o;
+	;o;;iÀ;i>;o;;iÀ;i-;@;@;"link-hover-color;1"link_hover_coloro;;iÃ;0;@;	o;
+	;o;;iÃ;iC;o;;iÃ;i;@;@;T;"pagination-hover-bg;[ ;o;0;@;iÃ;@;	o;
+	;o;;iÃ;i:;o;;iÃ;i-;@;@;"gray-lighter;1"gray_lightero;;iÕ;0;@;	o;
+	;o;;iÕ;i:;o;;iÕ;i;@;@;T;"pagination-hover-border;[ ;o;	;@;iÕ;	o;
+	;o;;iÕ;i1;o;;iÕ;i-;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;iœ;0;@;	o;
+	;o;;iœ;i:;o;;iœ;i;@;@;T;"pagination-active-color;[ ;o;	;@;iœ;	o;
+	;o;;iœ;i1;o;;iœ;i-;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i–;0;@;	o;
+	;o;;i–;iD;o;;i–;i;@;@;T;"pagination-active-bg;[ ;o;0;@;i–;@;	o;
+	;o;;i–;i;;o;;i–;i-;@;@;"brand-primary;1"brand_primaryo;;i—;0;@;	o;
+	;o;;i—;iD;o;;i—;i;@;@;T;"pagination-active-border;[ ;o;0;@;i—;@;	o;
+	;o;;i—;i;;o;;i—;i-;@;@;"brand-primary;1"brand_primaryo;;i”;0;@;	o;
+	;o;;i”;iA;o;;i”;i;@;@;T;"pagination-disabled-color;[ ;o;0;@;i”;@;	o;
+	;o;;i”;i8;o;;i”;i-;@;@;"gray-light;1"gray_lighto;;i‘;0;@;	o;
+	;o;;i‘;i:;o;;i‘;i;@;@;T;"pagination-disabled-bg;[ ;o;	;@;i‘;	o;
+	;o;;i‘;i1;o;;i‘;i-;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i’;0;@;	o;
+	;o;;i’;i:;o;;i’;i;@;@;T;"pagination-disabled-border;[ ;o;	;@;i’;	o;
+	;o;;i’;i1;o;;i’;i-;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;"
+;iÿ;#;$;@; ["/*== Pager
+ *
+ *## */;[ o;;i‹;0;@;	o;
+	;o;;i‹;iD;o;;i‹;i;@;@;T;"pager-bg;[ ;o;0;@;i‹;@;	o;
+	;o;;i‹;i;;o;;i‹;i-;@;@;"pagination-bg;1"pagination_bgo;;i›;0;@;	o;
+	;o;;i›;iH;o;;i›;i;@;@;T;"pager-border;[ ;o;0;@;i›;@;	o;
+	;o;;i›;i?;o;;i›;i-;@;@;"pagination-border;1"pagination_bordero;;iﬁ;0;@;	o;
+	;o;;iﬁ;i:;o;;iﬁ;i;@;@;T;"pager-border-radius;[ ;o;	;@;iﬁ;	o;
+	;o;;iﬁ;i1;o;;iﬁ;i-;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;;i‡;0;@;	o;
+	;o;;i‡;iJ;o;;i‡;i;@;@;T;"pager-hover-bg;[ ;o;0;@;i‡;@;	o;
+	;o;;i‡;iA;o;;i‡;i-;@;@;"pagination-hover-bg;1"pagination_hover_bgo;;i‚;0;@;	o;
+	;o;;i‚;iK;o;;i‚;i;@;@;T;"pager-active-bg;[ ;o;0;@;i‚;@;	o;
+	;o;;i‚;iB;o;;i‚;i-;@;@;"pagination-active-bg;1"pagination_active_bgo;;i„;0;@;	o;
+	;o;;i„;iN;o;;i„;i;@;@;T;"pager-active-color;[ ;o;0;@;i„;@;	o;
+	;o;;i„;iE;o;;i„;i-;@;@;"pagination-active-color;1"pagination_active_coloro;;iÂ;0;@;	o;
+	;o;;iÂ;iP;o;;iÂ;i;@;@;T;"pager-disabled-color;[ ;o;0;@;iÂ;@;	o;
+	;o;;iÂ;iG;o;;iÂ;i-;@;@;"pagination-disabled-color;1"pagination_disabled_coloro;"
+;iË;#;$;@; ["/*== Jumbotron
+ *
+ *## */;[ o;;iÏ;0;@;	o;
+	;o;;iÏ;i4;o;;iÏ;i;@;@;T;"jumbotron-padding;[ ;o;	;@;iÏ;	o;
+	;o;;iÏ;i+;o;;iÏ;i';@;@; o;2
+;@;3"	30px;4[ ; i#;5["pxo;;iÌ;0;@;	o;
+	;o;;iÌ;i7;o;;iÌ;i;@;@;T;"jumbotron-color;[ ;o;	;@;iÌ;	o;
+	;o;;iÌ;i.;o;;iÌ;i';@;@; o;<;#;=;@; "inherito;;iÓ;0;@;	o;
+	;o;;iÓ;i=;o;;iÓ;i;@;@;T;"jumbotron-bg;[ ;o;0;@;iÓ;@;	o;
+	;o;;iÓ;i4;o;;iÓ;i';@;@;"gray-lighter;1"gray_lightero;;iÔ;0;@;	o;
+	;o;;iÔ;i7;o;;iÔ;i;@;@;T;"jumbotron-heading-color;[ ;o;	;@;iÔ;	o;
+	;o;;iÔ;i.;o;;iÔ;i';@;@; o;<;#;=;@; "inherito;;i;0;@;	o;
+	;o;;i;iM;o;;i;i;@;@;T;"jumbotron-font-size;[ ;o;,;@;i;@;	o;
+	;o;;i;iD;o;;i;i';@;@;-0;"	ceil;.0;/[o;C;@;i;@;	o;
+	;o;;i;iB;o;;i;i-;@;@;D;E;Fo;	;@;i;	o;
+	;o;;i;iB;o;;i;i?;@;@; o;2
+;@;3"1.5;4@I; f1.5;5[ ;Go;0;@;i;@;	o;
+	;o;;i;i<;@©;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;;iÒ;0;@;	o;
+	;o;;iÒ;iM;o;;iÒ;i;@;@;T;" jumbotron-heading-font-size;[ ;o;,;@;iÒ;@;	o;
+	;o;;iÒ;iD;o;;iÒ;i';@;@;-0;"	ceil;.0;/[o;C;@;iÒ;@;	o;
+	;o;;iÒ;iB;o;;iÒ;i-;@;@;D;E;Fo;	;@;iÒ;	o;
+	;o;;iÒ;iB;o;;iÒ;i?;@;@; o;2
+;@;3"4.5;4@I; f4.5;5[ ;Go;0;@;iÒ;@;	o;
+	;o;;iÒ;i<;@ ;@;@;"font-size-base;1"font_size_base;6o;7;8IC;9{ ;:[ ;;{ o;"
+;iÙ;#;$;@; ["k/*== Form states and alerts
+ *
+ *## Define colors for form feedback states and, by default, alerts. */;[ o;;i¯;0;@;	o;
+	;o;;i¯;i7;o;;i¯;i;@;@;T;"state-success-text;[ ;o;	;@;i¯;	o;
+	;o;;i¯;i.;o;;i¯;i';@;@; o;%	;@;&"#3c763d; 0;'{	;(i;)iB;*iA;+i{o;;i˘;0;@;	o;
+	;o;;i˘;i7;o;;i˘;i;@;@;T;"state-success-bg;[ ;o;	;@;i˘;	o;
+	;o;;i˘;i.;o;;i˘;i';@;@; o;%	;@;&"#dff0d8; 0;'{	;(i;)iÿ;*iﬂ;+io;;i˙;0;@;	o;
+	;o;;i˙;i^;o;;i˙;i;@;@;T;"state-success-border;[ ;o;,;@;i˙;@;	o;
+	;o;;i˙;iU;o;;i˙;i';@;@;-0;"darken;.0;/[o;,;@;i˙;@;	o;
+	;o;;i˙;iP;o;;i˙;i.;@;@;-0;"adjust-hue;.0;/[o;0;@;i˙;@;	o;
+	;o;;i˙;iJ;o;;i˙;i9;@;@;"state-success-bg;1"state_success_bgo;	;@;i˙;	o;
+	;o;;i˙;iO;o;;i˙;iL;@;@; o;2
+;@;3"-10;4@I; iÒ;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;	;@;i˙;	o;
+	;o;;i˙;iT;o;;i˙;iR;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i¸;0;@;	o;
+	;o;;i¸;i7;o;;i¸;i;@;@;T;"state-info-text;[ ;o;	;@;i¸;	o;
+	;o;;i¸;i.;o;;i¸;i';@;@; o;%	;@;&"#31708f; 0;'{	;(i;)iè;*i6;+iuo;;i˝;0;@;	o;
+	;o;;i˝;i7;o;;i˝;i;@;@;T;"state-info-bg;[ ;o;	;@;i˝;	o;
+	;o;;i˝;i.;o;;i˝;i';@;@; o;%	;@;&"#d9edf7; 0;'{	;(i;)i˜;*iŸ;+iÌo;;i˛;0;@;	o;
+	;o;;i˛;i[;o;;i˛;i;@;@;T;"state-info-border;[ ;o;,;@;i˛;@;	o;
+	;o;;i˛;iR;o;;i˛;i';@;@;-0;"darken;.0;/[o;,;@;i˛;@;	o;
+	;o;;i˛;iM;o;;i˛;i.;@;@;-0;"adjust-hue;.0;/[o;0;@;i˛;@;	o;
+	;o;;i˛;iG;o;;i˛;i9;@;@;"state-info-bg;1"state_info_bgo;	;@;i˛;	o;
+	;o;;i˛;iL;o;;i˛;iI;@;@; o;2
+;@;3"-10;4@I; iÒ;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;	;@;i˛;	o;
+	;o;;i˛;iQ;o;;i˛;iO;@;@; o;2
+;@;3"7%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i ;0;@;	o;
+	;o;;i ;i7;o;;i ;i;@;@;T;"state-warning-text;[ ;o;	;@;i ;	o;
+	;o;;i ;i.;o;;i ;i';@;@; o;%	;@;&"#8a6d3b; 0;'{	;(i;)i@;*iä;+iro;;i;0;@;	o;
+	;o;;i;i7;o;;i;i;@;@;T;"state-warning-bg;[ ;o;	;@;i;	o;
+	;o;;i;i.;o;;i;i';@;@; o;%	;@;&"#fcf8e3; 0;'{	;(i;)i„;*i¸;+i¯o;;i;0;@;	o;
+	;o;;i;i^;o;;i;i;@;@;T;"state-warning-border;[ ;o;,;@;i;@;	o;
+	;o;;i;iU;o;;i;i';@;@;-0;"darken;.0;/[o;,;@;i;@;	o;
+	;o;;i;iP;o;;i;i.;@;@;-0;"adjust-hue;.0;/[o;0;@;i;@;	o;
+	;o;;i;iJ;o;;i;i9;@;@;"state-warning-bg;1"state_warning_bgo;	;@;i;	o;
+	;o;;i;iO;o;;i;iL;@;@; o;2
+;@;3"-10;4@I; iÒ;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;	;@;i;	o;
+	;o;;i;iT;o;;i;iR;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;;i;0;@;	o;
+	;o;;i;i7;o;;i;i;@;@;T;"state-danger-text;[ ;o;	;@;i;	o;
+	;o;;i;i.;o;;i;i';@;@; o;%	;@;&"#a94442; 0;'{	;(i;)iG;*i©;+iIo;;i;0;@;	o;
+	;o;;i;i7;o;;i;i;@;@;T;"state-danger-bg;[ ;o;	;@;i;	o;
+	;o;;i;i.;o;;i;i';@;@; o;%	;@;&"#f2dede; 0;'{	;(i;)iﬁ;*iÚ;+iﬁo;;i;0;@;	o;
+	;o;;i;i];o;;i;i;@;@;T;"state-danger-border;[ ;o;,;@;i;@;	o;
+	;o;;i;iT;o;;i;i';@;@;-0;"darken;.0;/[o;,;@;i;@;	o;
+	;o;;i;iO;o;;i;i.;@;@;-0;"adjust-hue;.0;/[o;0;@;i;@;	o;
+	;o;;i;iI;o;;i;i9;@;@;"state-danger-bg;1"state_danger_bgo;	;@;i;	o;
+	;o;;i;iN;o;;i;iK;@;@; o;2
+;@;3"-10;4@I; iÒ;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;	;@;i;	o;
+	;o;;i;iS;o;;i;iQ;@;@; o;2
+;@;3"5%;4[ ; i
+;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i	;#;$;@; ["/*== Tooltips
+ *
+ *## */;[ o;"
+;i;#;$;@; ["/*** Tooltip max width */;[ o;;i;0;@;	o;
+	;o;;i;i2;o;;i;i;@;@;T;"tooltip-max-width;[ ;o;	;@;i;	o;
+	;o;;i;i);o;;i;i$;@;@; o;2
+;@;3"
+200px;4[ ; i»;5["pxo;"
+;i;#;$;@; ["/*** Tooltip text color */;[ o;;i;0;@;	o;
+	;o;;i;i1;o;;i;i;@;@;T;"tooltip-color;[ ;o;	;@;i;	o;
+	;o;;i;i(;o;;i;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i;#;$;@; ["%/*** Tooltip background color */;[ o;;i;0;@;	o;
+	;o;;i;i1;o;;i;i;@;@;T;"tooltip-bg;[ ;o;	;@;i;	o;
+	;o;;i;i(;o;;i;i$;@;@; o;%	;@;&"	#000; 0;'{	;(i;)i ;*i ;+i o;;i;0;@;	o;
+	;o;;i;i/;o;;i;i;@;@;T;"tooltip-opacity;[ ;o;	;@;i;	o;
+	;o;;i;i&;o;;i;i$;@;@; o;2
+;@;3"0.9;4@I; f0.90000000000000002 ÃÕ;5[ o;"
+;i;#;$;@; [" /*** Tooltip arrow width */;[ o;;i;0;@;	o;
+	;o;;i;i0;o;;i;i;@;@;T;"tooltip-arrow-width;[ ;o;	;@;i;	o;
+	;o;;i;i';o;;i;i$;@;@; o;2
+;@;3"5px;4[ ; i
+;5["pxo;"
+;i;#;$;@; [" /*** Tooltip arrow color */;[ o;;i;0;@;	o;
+	;o;;i;i8;o;;i;i;@;@;T;"tooltip-arrow-color;[ ;o;0;@;i;@;	o;
+	;o;;i;i/;o;;i;i$;@;@;"tooltip-bg;1"tooltip_bgo;"
+;i;#;$;@; ["/*== Popovers
+ *
+ *## */;[ o;"
+;i;#;$;@; ["*/*** Popover body background color */;[ o;;i ;0;@;	o;
+	;o;;i ;i9;o;;i ;i;@;@;T;"popover-bg;[ ;o;	;@;i ;	o;
+	;o;;i ;i0;o;;i ;i,;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i!;#;$;@; [""/*** Popover maximum width */;[ o;;i";0;@;	o;
+	;o;;i";i:;o;;i";i;@;@;T;"popover-max-width;[ ;o;	;@;i";	o;
+	;o;;i";i1;o;;i";i,;@;@; o;2
+;@;3"
+276px;4[ ; i;5["pxo;"
+;i#;#;$;@; ["!/*** Popover border color */;[ o;;i$;0;@;	o;
+	;o;;i$;iC;o;;i$;i;@;@;T;"popover-border-color;[ ;o;,;@;i$;@;	o;
+	;o;;i$;i:;o;;i$;i,;@;@;-0;"	rgba;.0;/[	o;	;@;i$;	o;
+	;o;;i$;i2;o;;i$;i1;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i$;	o;
+	;o;;i$;i4;o;;i$;i3;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i$;	o;
+	;o;;i$;i6;o;;i$;i5;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i$;	o;
+	;o;;i$;i9;o;;i$;i7;@;@; o;2
+;@;3"0.2;4@I; f0.20000000000000001 ôö;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i%;#;$;@; ["*/*** Popover fallback border color */;[ o;;i&;0;@;	o;
+	;o;;i&;i9;o;;i&;i;@;@;T;""popover-fallback-border-color;[ ;o;	;@;i&;	o;
+	;o;;i&;i0;o;;i&;i,;@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;"
+;i(;#;$;@; ["+/*** Popover title background color */;[ o;;i);0;@;	o;
+	;o;;i);iL;o;;i);i;@;@;T;"popover-title-bg;[ ;o;,;@;i);@;	o;
+	;o;;i);iC;o;;i);i,;@;@;-0;"darken;.0;/[o;0;@;i);@;	o;
+	;o;;i);i>;o;;i);i3;@;@;"popover-bg;1"popover_bgo;	;@;i);	o;
+	;o;;i);iB;o;;i);i@;@;@; o;2
+;@;3"3%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i+;#;$;@; [" /*** Popover arrow width */;[ o;;i,;0;@;	o;
+	;o;;i,;i9;o;;i,;i;@;@;T;"popover-arrow-width;[ ;o;	;@;i,;	o;
+	;o;;i,;i0;o;;i,;i,;@;@; o;2
+;@;3"	10px;4[ ; i;5["pxo;"
+;i-;#;$;@; [" /*** Popover arrow color */;[ o;;i.;0;@;	o;
+	;o;;i.;i@;o;;i.;i;@;@;T;"popover-arrow-color;[ ;o;0;@;i.;@;	o;
+	;o;;i.;i7;o;;i.;i,;@;@;"popover-bg;1"popover_bgo;"
+;i0;#;$;@; ["&/*** Popover outer arrow width */;[ o;;i1;0;@;	o;
+	;o;;i1;iO;o;;i1;i;@;@;T;"popover-arrow-outer-width;[ ;o;C;@;i1;@;	o;
+	;o;;i1;iE;o;;i1;i-;@;@;D;H;Fo;	;@;i1;	o;
+	;o;;i1;iE;o;;i1;iD;@;@; o;2
+;@;3"1;4@I; i;5[ ;Go;0;@;i1;@;	o;
+	;o;;i1;iA;@/;@;@;"popover-arrow-width;1"popover_arrow_widtho;"
+;i2;#;$;@; ["&/*** Popover outer arrow color */;[ o;;i3;0;@;	o;
+	;o;;i3;iY;o;;i3;i;@;@;T;"popover-arrow-outer-color;[ ;o;,;@;i3;@;	o;
+	;o;;i3;iP;o;;i3;i,;@;@;-0;"fade_in;.0;/[o;0;@;i3;@;	o;
+	;o;;i3;iI;o;;i3;i4;@;@;"popover-border-color;1"popover_border_coloro;	;@;i3;	o;
+	;o;;i3;iO;o;;i3;iK;@;@; o;2
+;@;3"	0.05;4@I; f0.050000000000000003 ôö;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i4;#;$;@; ["//*** Popover outer arrow fallback color */;[ o;;i5;0;@;	o;
+	;o;;i5;i`;o;;i5;i;@;@;T;"'popover-arrow-outer-fallback-color;[ ;o;,;@;i5;@;	o;
+	;o;;i5;iW;o;;i5;i,;@;@;-0;"darken;.0;/[o;0;@;i5;@;	o;
+	;o;;i5;iQ;o;;i5;i3;@;@;""popover-fallback-border-color;1""popover_fallback_border_coloro;	;@;i5;	o;
+	;o;;i5;iV;o;;i5;iS;@;@; o;2
+;@;3"20%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i8;#;$;@; ["/*== Labels
+ *
+ *## */;[ o;"
+;i<;#;$;@; ["+/*** Default label background color */;[ o;;i=;0;@;	o;
+	;o;;i=;i8;o;;i=;i;@;@;T;"label-default-bg;[ ;o;0;@;i=;@;	o;
+	;o;;i=;i/;o;;i=;i$;@;@;"gray-light;1"gray_lighto;"
+;i>;#;$;@; ["+/*** Primary label background color */;[ o;;i?;0;@;	o;
+	;o;;i?;i;;o;;i?;i;@;@;T;"label-primary-bg;[ ;o;0;@;i?;@;	o;
+	;o;;i?;i2;o;;i?;i$;@;@;"brand-primary;1"brand_primaryo;"
+;i@;#;$;@; ["+/*** Success label background color */;[ o;;iA;0;@;	o;
+	;o;;iA;i;;o;;iA;i;@;@;T;"label-success-bg;[ ;o;0;@;iA;@;	o;
+	;o;;iA;i2;o;;iA;i$;@;@;"brand-success;1"brand_successo;"
+;iB;#;$;@; ["(/*** Info label background color */;[ o;;iC;0;@;	o;
+	;o;;iC;i8;o;;iC;i;@;@;T;"label-info-bg;[ ;o;0;@;iC;@;	o;
+	;o;;iC;i/;o;;iC;i$;@;@;"brand-info;1"brand_infoo;"
+;iD;#;$;@; ["+/*** Warning label background color */;[ o;;iE;0;@;	o;
+	;o;;iE;i;;o;;iE;i;@;@;T;"label-warning-bg;[ ;o;0;@;iE;@;	o;
+	;o;;iE;i2;o;;iE;i$;@;@;"brand-warning;1"brand_warningo;"
+;iF;#;$;@; ["*/*** Danger label background color */;[ o;;iG;0;@;	o;
+	;o;;iG;i:;o;;iG;i;@;@;T;"label-danger-bg;[ ;o;0;@;iG;@;	o;
+	;o;;iG;i1;o;;iG;i$;@;@;"brand-danger;1"brand_dangero;"
+;iI;#;$;@; ["%/*** Default label text color */;[ o;;iJ;0;@;	o;
+	;o;;iJ;i1;o;;iJ;i;@;@;T;"label-color;[ ;o;	;@;iJ;	o;
+	;o;;iJ;i(;o;;iJ;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;iK;#;$;@; ["1/*** Default text color of a linked label */;[ o;;iL;0;@;	o;
+	;o;;iL;i1;o;;iL;i;@;@;T;"label-link-hover-color;[ ;o;	;@;iL;	o;
+	;o;;iL;i(;o;;iL;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;iO;#;$;@; ["/*== Modals
+ *
+ *## */;[ o;"
+;iS;#;$;@; ["./*** Padding applied to the modal body */;[ o;;iT;0;@;	o;
+	;o;;iT;i1;o;;iT;i;@;@;T;"modal-inner-padding;[ ;o;	;@;iT;	o;
+	;o;;iT;i(;o;;iT;i$;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;"
+;iV;#;$;@; ["//*** Padding applied to the modal title */;[ o;;iW;0;@;	o;
+	;o;;iW;i1;o;;iW;i;@;@;T;"modal-title-padding;[ ;o;	;@;iW;	o;
+	;o;;iW;i(;o;;iW;i$;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;"
+;iX;#;$;@; ["$/*** Modal title line-height */;[ o;;iY;0;@;	o;
+	;o;;iY;i>;o;;iY;i;@;@;T;"modal-title-line-height;[ ;o;0;@;iY;@;	o;
+	;o;;iY;i5;o;;iY;i$;@;@;"line-height-base;1"line_height_baseo;"
+;i[;#;$;@; ["3/*** Background color of modal content area */;[ o;;i\;0;@;	o;
+	;o;;i\;iB;o;;i\;i;@;@;T;"modal-content-bg;[ ;o;	;@;i\;	o;
+	;o;;i\;i9;o;;i\;i5;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i];#;$;@; ["'/*** Modal content border color */;[ o;;i^;0;@;	o;
+	;o;;i^;iL;o;;i^;i;@;@;T;"modal-content-border-color;[ ;o;,;@;i^;@;	o;
+	;o;;i^;iC;o;;i^;i5;@;@;-0;"	rgba;.0;/[	o;	;@;i^;	o;
+	;o;;i^;i;;o;;i^;i:;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i^;	o;
+	;o;;i^;i=;o;;i^;i<;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i^;	o;
+	;o;;i^;i?;o;;i^;i>;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i^;	o;
+	;o;;i^;iB;o;;i^;i@;@;@; o;2
+;@;3"0.2;4@I; f0.20000000000000001 ôö;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i_;#;$;@; ["3/*** Modal content border color **for IE8** */;[ o;;i`;0;@;	o;
+	;o;;i`;iB;o;;i`;i;@;@;T;"(modal-content-fallback-border-color;[ ;o;	;@;i`;	o;
+	;o;;i`;i9;o;;i`;i5;@;@; o;%	;@;&"	#999; 0;'{	;(i;)iô;*iô;+iôo;"
+;ib;#;$;@; [",/*** Modal backdrop background color */;[ o;;ic;0;@;	o;
+	;o;;ic;i1;o;;ic;i;@;@;T;"modal-backdrop-bg;[ ;o;	;@;ic;	o;
+	;o;;ic;i(;o;;ic;i$;@;@; o;%	;@;&"	#000; 0;'{	;(i;)i ;*i ;+i o;"
+;id;#;$;@; ["#/*** Modal backdrop opacity */;[ o;;ie;0;@;	o;
+	;o;;ie;i/;o;;ie;i;@;@;T;"modal-backdrop-opacity;[ ;o;	;@;ie;	o;
+	;o;;ie;i&;o;;ie;i$;@;@; o;2
+;@;3"0.5;4@I; f0.5;5[ o;"
+;if;#;$;@; ["&/*** Modal header border color */;[ o;;ig;0;@;	o;
+	;o;;ig;i4;o;;ig;i;@;@;T;"modal-header-border-color;[ ;o;	;@;ig;	o;
+	;o;;ig;i+;o;;ig;i$;@;@; o;%	;@;&"#e5e5e5; 0;'{	;(i;)iÂ;*iÂ;+iÂo;"
+;ih;#;$;@; ["&/*** Modal footer border color */;[ o;;ii;0;@;	o;
+	;o;;ii;iG;o;;ii;i;@;@;T;"modal-footer-border-color;[ ;o;0;@;ii;@;	o;
+	;o;;ii;i>;o;;ii;i$;@;@;"modal-header-border-color;1"modal_header_border_coloro;;ik;0;@;	o;
+	;o;;ik;i2;o;;ik;i;@;@;T;"modal-lg;[ ;o;	;@;ik;	o;
+	;o;;ik;i);o;;ik;i$;@;@; o;2
+;@;3"
+900px;4[ ; iÑ;5["pxo;;il;0;@;	o;
+	;o;;il;i2;o;;il;i;@;@;T;"modal-md;[ ;o;	;@;il;	o;
+	;o;;il;i);o;;il;i$;@;@; o;2
+;@;3"
+600px;4[ ; iX;5["pxo;;im;0;@;	o;
+	;o;;im;i2;o;;im;i;@;@;T;"modal-sm;[ ;o;	;@;im;	o;
+	;o;;im;i);o;;im;i$;@;@; o;2
+;@;3"
+300px;4[ ; i,;5["pxo;"
+;ip;#;$;@; ["L/*== Alerts
+ *
+ *## Define alert colors, border radius, and padding. */;[ o;;it;0;@;	o;
+	;o;;it;i1;o;;it;i;@;@;T;"alert-padding;[ ;o;	;@;it;	o;
+	;o;;it;i(;o;;it;i$;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;;iu;0;@;	o;
+	;o;;iu;i@;o;;iu;i;@;@;T;"alert-border-radius;[ ;o;0;@;iu;@;	o;
+	;o;;iu;i7;o;;iu;i$;@;@;"border-radius-base;1"border_radius_baseo;;iv;0;@;	o;
+	;o;;iv;i1;o;;iv;i;@;@;T;"alert-link-font-weight;[ ;o;	;@;iv;	o;
+	;o;;iv;i(;o;;iv;i$;@;@; o;<;#;=;@; "	boldo;;ix;0;@;	o;
+	;o;;ix;i>;o;;ix;i;@;@;T;"alert-success-bg;[ ;o;0;@;ix;@;	o;
+	;o;;ix;i5;o;;ix;i$;@;@;"state-success-bg;1"state_success_bgo;;iy;0;@;	o;
+	;o;;iy;i@;o;;iy;i;@;@;T;"alert-success-text;[ ;o;0;@;iy;@;	o;
+	;o;;iy;i7;o;;iy;i$;@;@;"state-success-text;1"state_success_texto;;iz;0;@;	o;
+	;o;;iz;iB;o;;iz;i;@;@;T;"alert-success-border;[ ;o;0;@;iz;@;	o;
+	;o;;iz;i9;o;;iz;i$;@;@;"state-success-border;1"state_success_bordero;;i|;0;@;	o;
+	;o;;i|;i;;o;;i|;i;@;@;T;"alert-info-bg;[ ;o;0;@;i|;@;	o;
+	;o;;i|;i2;o;;i|;i$;@;@;"state-info-bg;1"state_info_bgo;;i};0;@;	o;
+	;o;;i};i=;o;;i};i;@;@;T;"alert-info-text;[ ;o;0;@;i};@;	o;
+	;o;;i};i4;o;;i};i$;@;@;"state-info-text;1"state_info_texto;;i~;0;@;	o;
+	;o;;i~;i?;o;;i~;i;@;@;T;"alert-info-border;[ ;o;0;@;i~;@;	o;
+	;o;;i~;i6;o;;i~;i$;@;@;"state-info-border;1"state_info_bordero;;iÄ;0;@;	o;
+	;o;;iÄ;i>;o;;iÄ;i;@;@;T;"alert-warning-bg;[ ;o;0;@;iÄ;@;	o;
+	;o;;iÄ;i5;o;;iÄ;i$;@;@;"state-warning-bg;1"state_warning_bgo;;iÅ;0;@;	o;
+	;o;;iÅ;i@;o;;iÅ;i;@;@;T;"alert-warning-text;[ ;o;0;@;iÅ;@;	o;
+	;o;;iÅ;i7;o;;iÅ;i$;@;@;"state-warning-text;1"state_warning_texto;;iÇ;0;@;	o;
+	;o;;iÇ;iB;o;;iÇ;i;@;@;T;"alert-warning-border;[ ;o;0;@;iÇ;@;	o;
+	;o;;iÇ;i9;o;;iÇ;i$;@;@;"state-warning-border;1"state_warning_bordero;;iÑ;0;@;	o;
+	;o;;iÑ;i=;o;;iÑ;i;@;@;T;"alert-danger-bg;[ ;o;0;@;iÑ;@;	o;
+	;o;;iÑ;i4;o;;iÑ;i$;@;@;"state-danger-bg;1"state_danger_bgo;;iÖ;0;@;	o;
+	;o;;iÖ;i?;o;;iÖ;i;@;@;T;"alert-danger-text;[ ;o;0;@;iÖ;@;	o;
+	;o;;iÖ;i6;o;;iÖ;i$;@;@;"state-danger-text;1"state_danger_texto;;iÜ;0;@;	o;
+	;o;;iÜ;iA;o;;iÜ;i;@;@;T;"alert-danger-border;[ ;o;0;@;iÜ;@;	o;
+	;o;;iÜ;i8;o;;iÜ;i$;@;@;"state-danger-border;1"state_danger_bordero;"
+;iâ;#;$;@; [""/*== Progress bars
+ *
+ *## */;[ o;"
+;iç;#;$;@; ["=/*** Background color of the whole progress component */;[ o;;ié;0;@;	o;
+	;o;;ié;i4;o;;ié;i;@;@;T;"progress-bg;[ ;o;	;@;ié;	o;
+	;o;;ié;i+;o;;ié;i$;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;"
+;iè;#;$;@; ["$/*** Progress bar text color */;[ o;;iê;0;@;	o;
+	;o;;iê;i1;o;;iê;i;@;@;T;"progress-bar-color;[ ;o;	;@;iê;	o;
+	;o;;iê;i(;o;;iê;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;ië;#;$;@; ["B/*** Variable for setting rounded corners on progress bar. */;[ o;;ií;0;@;	o;
+	;o;;ií;i@;o;;ií;i;@;@;T;"progress-border-radius;[ ;o;0;@;ií;@;	o;
+	;o;;ií;i7;o;;ií;i$;@;@;"border-radius-base;1"border_radius_baseo;"
+;iî;#;$;@; ["'/*** Default progress bar color */;[ o;;iï;0;@;	o;
+	;o;;iï;i;;o;;iï;i;@;@;T;"progress-bar-bg;[ ;o;0;@;iï;@;	o;
+	;o;;iï;i2;o;;iï;i$;@;@;"brand-primary;1"brand_primaryo;"
+;iñ;#;$;@; ["'/*** Success progress bar color */;[ o;;ió;0;@;	o;
+	;o;;ió;i;;o;;ió;i;@;@;T;"progress-bar-success-bg;[ ;o;0;@;ió;@;	o;
+	;o;;ió;i2;o;;ió;i$;@;@;"brand-success;1"brand_successo;"
+;iò;#;$;@; ["'/*** Warning progress bar color */;[ o;;iô;0;@;	o;
+	;o;;iô;i;;o;;iô;i;@;@;T;"progress-bar-warning-bg;[ ;o;0;@;iô;@;	o;
+	;o;;iô;i2;o;;iô;i$;@;@;"brand-warning;1"brand_warningo;"
+;iö;#;$;@; ["&/*** Danger progress bar color */;[ o;;iõ;0;@;	o;
+	;o;;iõ;i:;o;;iõ;i;@;@;T;"progress-bar-danger-bg;[ ;o;0;@;iõ;@;	o;
+	;o;;iõ;i1;o;;iõ;i$;@;@;"brand-danger;1"brand_dangero;"
+;iú;#;$;@; ["$/*** Info progress bar color */;[ o;;iù;0;@;	o;
+	;o;;iù;i8;o;;iù;i;@;@;T;"progress-bar-info-bg;[ ;o;0;@;iù;@;	o;
+	;o;;iù;i/;o;;iù;i$;@;@;"brand-info;1"brand_infoo;"
+;i†;#;$;@; ["/*== List group
+ *
+ *## */;[ o;"
+;i§;#;$;@; ["3/*** Background color on `.list-group-item` */;[ o;;i•;0;@;	o;
+	;o;;i•;i3;o;;i•;i;@;@;T;"list-group-bg;[ ;o;	;@;i•;	o;
+	;o;;i•;i*;o;;i•;i&;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i¶;#;$;@; [",/*** `.list-group-item` border color */;[ o;;iß;0;@;	o;
+	;o;;iß;i3;o;;iß;i;@;@;T;"list-group-border;[ ;o;	;@;iß;	o;
+	;o;;iß;i*;o;;iß;i&;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;"
+;i®;#;$;@; ["%/*** List group border radius */;[ o;;i©;0;@;	o;
+	;o;;i©;iB;o;;i©;i;@;@;T;"list-group-border-radius;[ ;o;0;@;i©;@;	o;
+	;o;;i©;i9;o;;i©;i&;@;@;"border-radius-base;1"border_radius_baseo;"
+;i´;#;$;@; [";/*** Background color of single list items on hover */;[ o;;i¨;0;@;	o;
+	;o;;i¨;i6;o;;i¨;i;@;@;T;"list-group-hover-bg;[ ;o;	;@;i¨;	o;
+	;o;;i¨;i-;o;;i¨;i&;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;"
+;i≠;#;$;@; [",/*** Text color of active list items */;[ o;;iÆ;0;@;	o;
+	;o;;iÆ;iF;o;;iÆ;i;@;@;T;"list-group-active-color;[ ;o;0;@;iÆ;@;	o;
+	;o;;iÆ;i=;o;;iÆ;i&;@;@;"component-active-color;1"component_active_coloro;"
+;iØ;#;$;@; ["2/*** Background color of active list items */;[ o;;i∞;0;@;	o;
+	;o;;i∞;iC;o;;i∞;i;@;@;T;"list-group-active-bg;[ ;o;0;@;i∞;@;	o;
+	;o;;i∞;i:;o;;i∞;i&;@;@;"component-active-bg;1"component_active_bgo;"
+;i±;#;$;@; ["1/*** Border color of active list elements */;[ o;;i≤;0;@;	o;
+	;o;;i≤;iD;o;;i≤;i;@;@;T;"list-group-active-border;[ ;o;0;@;i≤;@;	o;
+	;o;;i≤;i;;o;;i≤;i&;@;@;"list-group-active-bg;1"list_group_active_bgo;"
+;i≥;#;$;@; ["</*** Text color for content within active list items */;[ o;;i¥;0;@;	o;
+	;o;;i¥;iR;o;;i¥;i;@;@;T;"!list-group-active-text-color;[ ;o;,;@;i¥;@;	o;
+	;o;;i¥;iI;o;;i¥;i&;@;@;-0;"lighten;.0;/[o;0;@;i¥;@;	o;
+	;o;;i¥;iC;o;;i¥;i.;@;@;"list-group-active-bg;1"list_group_active_bgo;	;@;i¥;	o;
+	;o;;i¥;iH;o;;i¥;iE;@;@; o;2
+;@;3"40%;4[ ; i-;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i∂;#;$;@; ["./*** Text color of disabled list items */;[ o;;i∑;0;@;	o;
+	;o;;i∑;i;;o;;i∑;i;@;@;T;"list-group-disabled-color;[ ;o;0;@;i∑;@;	o;
+	;o;;i∑;i2;o;;i∑;i';@;@;"gray-light;1"gray_lighto;"
+;i∏;#;$;@; ["4/*** Background color of disabled list items */;[ o;;iπ;0;@;	o;
+	;o;;iπ;i=;o;;iπ;i;@;@;T;"list-group-disabled-bg;[ ;o;0;@;iπ;@;	o;
+	;o;;iπ;i4;o;;iπ;i';@;@;"gray-lighter;1"gray_lightero;"
+;i∫;#;$;@; [">/*** Text color for content within disabled list items */;[ o;;iª;0;@;	o;
+	;o;;iª;iJ;o;;iª;i;@;@;T;"#list-group-disabled-text-color;[ ;o;0;@;iª;@;	o;
+	;o;;iª;iA;o;;iª;i';@;@;"list-group-disabled-color;1"list_group_disabled_coloro;;iΩ;0;@;	o;
+	;o;;iΩ;i3;o;;iΩ;i;@;@;T;"list-group-link-color;[ ;o;	;@;iΩ;	o;
+	;o;;iΩ;i*;o;;iΩ;i&;@;@; o;%	;@;&"	#555; 0;'{	;(i;)iZ;*iZ;+iZo;;iæ;0;@;	o;
+	;o;;iæ;iE;o;;iæ;i;@;@;T;" list-group-link-hover-color;[ ;o;0;@;iæ;@;	o;
+	;o;;iæ;i<;o;;iæ;i&;@;@;"list-group-link-color;1"list_group_link_coloro;;iø;0;@;	o;
+	;o;;iø;i3;o;;iø;i;@;@;T;""list-group-link-heading-color;[ ;o;	;@;iø;	o;
+	;o;;iø;i*;o;;iø;i&;@;@; o;%	;@;&"	#333; 0;'{	;(i;)i8;*i8;+i8o;"
+;i¬;#;$;@; ["/*== Panels
+ *
+ *## */;[ o;;i∆;0;@;	o;
+	;o;;i∆;i1;o;;i∆;i;@;@;T;"panel-bg;[ ;o;	;@;i∆;	o;
+	;o;;i∆;i(;o;;i∆;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i«;0;@;	o;
+	;o;;i«;i1;o;;i«;i;@;@;T;"panel-body-padding;[ ;o;	;@;i«;	o;
+	;o;;i«;i(;o;;i«;i$;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;;i»;0;@;	o;
+	;o;;i»;i6;o;;i»;i;@;@;T;"panel-heading-padding;[ ;o;>;@;i»;@;	o;
+	;o;;i»;i.;o;;i»;i$;@;@;?;K;A[o;	;@;i»;	o;
+	;o;;i»;i(;o;;i»;i$;@;@; o;2
+;@;3"	10px;4[ ; i;5["pxo;	;@;i»;	o;
+	;o;;i»;i-;o;;i»;i);@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;;i…;0;@;	o;
+	;o;;i…;iC;o;;i…;i;@;@;T;"panel-footer-padding;[ ;o;0;@;i…;@;	o;
+	;o;;i…;i:;o;;i…;i$;@;@;"panel-heading-padding;1"panel_heading_paddingo;;i ;0;@;	o;
+	;o;;i ;i@;o;;i ;i;@;@;T;"panel-border-radius;[ ;o;0;@;i ;@;	o;
+	;o;;i ;i7;o;;i ;i$;@;@;"border-radius-base;1"border_radius_baseo;"
+;iÃ;#;$;@; ["4/*** Border color for elements within panels */;[ o;;iÕ;0;@;	o;
+	;o;;iÕ;i1;o;;iÕ;i;@;@;T;"panel-inner-border;[ ;o;	;@;iÕ;	o;
+	;o;;iÕ;i(;o;;iÕ;i$;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;iŒ;0;@;	o;
+	;o;;iŒ;i4;o;;iŒ;i;@;@;T;"panel-footer-bg;[ ;o;	;@;iŒ;	o;
+	;o;;iŒ;i+;o;;iŒ;i$;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;;i–;0;@;	o;
+	;o;;i–;i7;o;;i–;i;@;@;T;"panel-default-text;[ ;o;0;@;i–;@;	o;
+	;o;;i–;i.;o;;i–;i$;@;@;"gray-dark;1"gray_darko;;i—;0;@;	o;
+	;o;;i—;i1;o;;i—;i;@;@;T;"panel-default-border;[ ;o;	;@;i—;	o;
+	;o;;i—;i(;o;;i—;i$;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;;i“;0;@;	o;
+	;o;;i“;i4;o;;i“;i;@;@;T;"panel-default-heading-bg;[ ;o;	;@;i“;	o;
+	;o;;i“;i+;o;;i“;i$;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;;i‘;0;@;	o;
+	;o;;i‘;i1;o;;i‘;i;@;@;T;"panel-primary-text;[ ;o;	;@;i‘;	o;
+	;o;;i‘;i(;o;;i‘;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i’;0;@;	o;
+	;o;;i’;i;;o;;i’;i;@;@;T;"panel-primary-border;[ ;o;0;@;i’;@;	o;
+	;o;;i’;i2;o;;i’;i$;@;@;"brand-primary;1"brand_primaryo;;i÷;0;@;	o;
+	;o;;i÷;i;;o;;i÷;i;@;@;T;"panel-primary-heading-bg;[ ;o;0;@;i÷;@;	o;
+	;o;;i÷;i2;o;;i÷;i$;@;@;"brand-primary;1"brand_primaryo;;iÿ;0;@;	o;
+	;o;;iÿ;i@;o;;iÿ;i;@;@;T;"panel-success-text;[ ;o;0;@;iÿ;@;	o;
+	;o;;iÿ;i7;o;;iÿ;i$;@;@;"state-success-text;1"state_success_texto;;iŸ;0;@;	o;
+	;o;;iŸ;iB;o;;iŸ;i;@;@;T;"panel-success-border;[ ;o;0;@;iŸ;@;	o;
+	;o;;iŸ;i9;o;;iŸ;i$;@;@;"state-success-border;1"state_success_bordero;;i⁄;0;@;	o;
+	;o;;i⁄;i>;o;;i⁄;i;@;@;T;"panel-success-heading-bg;[ ;o;0;@;i⁄;@;	o;
+	;o;;i⁄;i5;o;;i⁄;i$;@;@;"state-success-bg;1"state_success_bgo;;i‹;0;@;	o;
+	;o;;i‹;i=;o;;i‹;i;@;@;T;"panel-info-text;[ ;o;0;@;i‹;@;	o;
+	;o;;i‹;i4;o;;i‹;i$;@;@;"state-info-text;1"state_info_texto;;i›;0;@;	o;
+	;o;;i›;i?;o;;i›;i;@;@;T;"panel-info-border;[ ;o;0;@;i›;@;	o;
+	;o;;i›;i6;o;;i›;i$;@;@;"state-info-border;1"state_info_bordero;;iﬁ;0;@;	o;
+	;o;;iﬁ;i;;o;;iﬁ;i;@;@;T;"panel-info-heading-bg;[ ;o;0;@;iﬁ;@;	o;
+	;o;;iﬁ;i2;o;;iﬁ;i$;@;@;"state-info-bg;1"state_info_bgo;;i‡;0;@;	o;
+	;o;;i‡;i@;o;;i‡;i;@;@;T;"panel-warning-text;[ ;o;0;@;i‡;@;	o;
+	;o;;i‡;i7;o;;i‡;i$;@;@;"state-warning-text;1"state_warning_texto;;i·;0;@;	o;
+	;o;;i·;iB;o;;i·;i;@;@;T;"panel-warning-border;[ ;o;0;@;i·;@;	o;
+	;o;;i·;i9;o;;i·;i$;@;@;"state-warning-border;1"state_warning_bordero;;i‚;0;@;	o;
+	;o;;i‚;i>;o;;i‚;i;@;@;T;"panel-warning-heading-bg;[ ;o;0;@;i‚;@;	o;
+	;o;;i‚;i5;o;;i‚;i$;@;@;"state-warning-bg;1"state_warning_bgo;;i‰;0;@;	o;
+	;o;;i‰;i?;o;;i‰;i;@;@;T;"panel-danger-text;[ ;o;0;@;i‰;@;	o;
+	;o;;i‰;i6;o;;i‰;i$;@;@;"state-danger-text;1"state_danger_texto;;iÂ;0;@;	o;
+	;o;;iÂ;iA;o;;iÂ;i;@;@;T;"panel-danger-border;[ ;o;0;@;iÂ;@;	o;
+	;o;;iÂ;i8;o;;iÂ;i$;@;@;"state-danger-border;1"state_danger_bordero;;iÊ;0;@;	o;
+	;o;;iÊ;i=;o;;iÊ;i;@;@;T;"panel-danger-heading-bg;[ ;o;0;@;iÊ;@;	o;
+	;o;;iÊ;i4;o;;iÊ;i$;@;@;"state-danger-bg;1"state_danger_bgo;"
+;iÈ;#;$;@; ["/*== Thumbnails
+ *
+ *## */;[ o;"
+;iÌ;#;$;@; ["//*** Padding around the thumbnail image */;[ o;;iÓ;0;@;	o;
+	;o;;iÓ;i0;o;;iÓ;i;@;@;T;"thumbnail-padding;[ ;o;	;@;iÓ;	o;
+	;o;;iÓ;i';o;;iÓ;i$;@;@; o;2
+;@;3"4px;4[ ; i	;5["pxo;"
+;iÔ;#;$;@; ["'/*** Thumbnail background color */;[ o;;i;0;@;	o;
+	;o;;i;i5;o;;i;i;@;@;T;"thumbnail-bg;[ ;o;0;@;i;@;	o;
+	;o;;i;i,;o;;i;i$;@;@;"body-bg;1"body_bgo;"
+;iÒ;#;$;@; ["#/*** Thumbnail border color */;[ o;;iÚ;0;@;	o;
+	;o;;iÚ;i1;o;;iÚ;i;@;@;T;"thumbnail-border;[ ;o;	;@;iÚ;	o;
+	;o;;iÚ;i(;o;;iÚ;i$;@;@; o;%	;@;&"	#ddd; 0;'{	;(i;)i›;*i›;+i›o;"
+;iÛ;#;$;@; ["$/*** Thumbnail border radius */;[ o;;iÙ;0;@;	o;
+	;o;;iÙ;i@;o;;iÙ;i;@;@;T;"thumbnail-border-radius;[ ;o;0;@;iÙ;@;	o;
+	;o;;iÙ;i7;o;;iÙ;i$;@;@;"border-radius-base;1"border_radius_baseo;"
+;iˆ;#;$;@; ["5/*** Custom text color for thumbnail captions */;[ o;;i˜;0;@;	o;
+	;o;;i˜;i8;o;;i˜;i;@;@;T;"thumbnail-caption-color;[ ;o;0;@;i˜;@;	o;
+	;o;;i˜;i/;o;;i˜;i$;@;@;"text-color;1"text_coloro;"
+;i¯;#;$;@; ["1/*** Padding around the thumbnail caption */;[ o;;i˘;0;@;	o;
+	;o;;i˘;i0;o;;i˘;i;@;@;T;"thumbnail-caption-padding;[ ;o;	;@;i˘;	o;
+	;o;;i˘;i';o;;i˘;i$;@;@; o;2
+;@;3"9px;4[ ; i;5["pxo;"
+;i¸;#;$;@; ["/*== Wells
+ *
+ *## */;[ o;;i ;0;@;	o;
+	;o;;i ;i4;o;;i ;i;@;@;T;"well-bg;[ ;o;	;@;i ;	o;
+	;o;;i ;i+;o;;i ;i$;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;;i;0;@;	o;
+	;o;;i;iA;o;;i;i;@;@;T;"well-border;[ ;o;,;@;i;@;	o;
+	;o;;i;i8;o;;i;i$;@;@;-0;"darken;.0;/[o;0;@;i;@;	o;
+	;o;;i;i3;o;;i;i+;@;@;"well-bg;1"well_bgo;	;@;i;	o;
+	;o;;i;i7;o;;i;i5;@;@; o;2
+;@;3"7%;4[ ; i;5["%;6o;7;8IC;9{ ;:[ ;;{ o;"
+;i;#;$;@; ["/*== Badges
+ *
+ *## */;[ o;;i;0;@;	o;
+	;o;;i;i1;o;;i;i;@;@;T;"badge-color;[ ;o;	;@;i;	o;
+	;o;;i;i(;o;;i;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i	;#;$;@; ["-/*** Linked badge text color on hover */;[ o;;i
+;0;@;	o;
+	;o;;i
+;i1;o;;i
+;i;@;@;T;"badge-link-hover-color;[ ;o;	;@;i
+;	o;
+	;o;;i
+;i(;o;;i
+;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i;0;@;	o;
+	;o;;i;i8;o;;i;i;@;@;T;"badge-bg;[ ;o;0;@;i;@;	o;
+	;o;;i;i/;o;;i;i$;@;@;"gray-light;1"gray_lighto;"
+;i;#;$;@; ["0/*** Badge text color in active nav link */;[ o;;i;0;@;	o;
+	;o;;i;i8;o;;i;i;@;@;T;"badge-active-color;[ ;o;0;@;i;@;	o;
+	;o;;i;i/;o;;i;i$;@;@;"link-color;1"link_coloro;"
+;i;#;$;@; ["6/*** Badge background color in active nav link */;[ o;;i;0;@;	o;
+	;o;;i;i1;o;;i;i;@;@;T;"badge-active-bg;[ ;o;	;@;i;	o;
+	;o;;i;i(;o;;i;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i;0;@;	o;
+	;o;;i;i1;o;;i;i;@;@;T;"badge-font-weight;[ ;o;	;@;i;	o;
+	;o;;i;i(;o;;i;i$;@;@; o;<;#;=;@; "	boldo;;i;0;@;	o;
+	;o;;i;i.;o;;i;i;@;@;T;"badge-line-height;[ ;o;	;@;i;	o;
+	;o;;i;i%;o;;i;i$;@;@; o;2
+;@;3"1;4@I; i;5[ o;;i;0;@;	o;
+	;o;;i;i1;o;;i;i;@;@;T;"badge-border-radius;[ ;o;	;@;i;	o;
+	;o;;i;i(;o;;i;i$;@;@; o;2
+;@;3"	10px;4[ ; i;5["pxo;"
+;i;#;$;@; [" /*== Breadcrumbs
+ *
+ *## */;[ o;;i;0;@;	o;
+	;o;;i;i2;o;;i;i;@;@;T;" breadcrumb-padding-vertical;[ ;o;	;@;i;	o;
+	;o;;i;i);o;;i;i&;@;@; o;2
+;@;3"8px;4[ ; i;5["pxo;;i;0;@;	o;
+	;o;;i;i3;o;;i;i;@;@;T;""breadcrumb-padding-horizontal;[ ;o;	;@;i;	o;
+	;o;;i;i*;o;;i;i&;@;@; o;2
+;@;3"	15px;4[ ; i;5["pxo;"
+;i;#;$;@; ["(/*** Breadcrumb background color */;[ o;;i;0;@;	o;
+	;o;;i;i6;o;;i;i;@;@;T;"breadcrumb-bg;[ ;o;	;@;i;	o;
+	;o;;i;i-;o;;i;i&;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;"
+;i;#;$;@; [""/*** Breadcrumb text color */;[ o;;i ;0;@;	o;
+	;o;;i ;i3;o;;i ;i;@;@;T;"breadcrumb-color;[ ;o;	;@;i ;	o;
+	;o;;i ;i*;o;;i ;i&;@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;"
+;i!;#;$;@; ["9/*** Text color of current page in the breadcrumb */;[ o;;i";0;@;	o;
+	;o;;i";i:;o;;i";i;@;@;T;"breadcrumb-active-color;[ ;o;0;@;i";@;	o;
+	;o;;i";i1;o;;i";i&;@;@;"gray-light;1"gray_lighto;"
+;i#;#;$;@; [">/*** Textual separator for between breadcrumb elements */;[ o;;i$;0;@;	o;
+	;o;;i$;i2;o;;i$;i;@;@;T;"breadcrumb-separator;[ ;o;	;@;i$;	o;
+	;o;;i$;i);o;;i$;i&;@;@; o;<;#;B;@; "/o;"
+;i';#;$;@; ["/*== Carousel
+ *
+ *## */;[ o;;i+;0;@;	o;
+	;o;;i+;iU;o;;i+;i;@;@;T;"carousel-text-shadow;[ ;o;>;@;i+;@;	o;
+	;o;;i+;iM;o;;i+;i4;@;@;?;K;A[	o;	;@;i+;	o;
+	;o;;i+;i5;o;;i+;i4;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i+;	o;
+	;o;;i+;i9;o;;i+;i6;@;@; o;2
+;@;3"1px;4[ ; i;5["pxo;	;@;i+;	o;
+	;o;;i+;i=;o;;i+;i:;@;@; o;2
+;@;3"2px;4[ ; i;5["pxo;,;@;i+;@;	o;
+	;o;;i+;iL;o;;i+;i>;@;@;-0;"	rgba;.0;/[	o;	;@;i+;	o;
+	;o;;i+;iD;o;;i+;iC;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i+;	o;
+	;o;;i+;iF;o;;i+;iE;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i+;	o;
+	;o;;i+;iH;o;;i+;iG;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i+;	o;
+	;o;;i+;iK;o;;i+;iI;@;@; o;2
+;@;3"0.6;4@I; f0.59999999999999998 33;5[ ;6o;7;8IC;9{ ;:[ ;;{ o;;i-;0;@;	o;
+	;o;;i-;iA;o;;i-;i;@;@;T;"carousel-control-color;[ ;o;	;@;i-;	o;
+	;o;;i-;i8;o;;i-;i4;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i.;0;@;	o;
+	;o;;i.;i@;o;;i.;i;@;@;T;"carousel-control-width;[ ;o;	;@;i.;	o;
+	;o;;i.;i7;o;;i.;i4;@;@; o;2
+;@;3"15%;4[ ; i;5["%o;;i/;0;@;	o;
+	;o;;i/;i?;o;;i/;i;@;@;T;"carousel-control-opacity;[ ;o;	;@;i/;	o;
+	;o;;i/;i6;o;;i/;i4;@;@; o;2
+;@;3"0.5;4@I; f0.5;5[ o;;i0;0;@;	o;
+	;o;;i0;iA;o;;i0;i;@;@;T;"carousel-control-font-size;[ ;o;	;@;i0;	o;
+	;o;;i0;i8;o;;i0;i4;@;@; o;2
+;@;3"	20px;4[ ; i;5["pxo;;i2;0;@;	o;
+	;o;;i2;iA;o;;i2;i;@;@;T;"!carousel-indicator-active-bg;[ ;o;	;@;i2;	o;
+	;o;;i2;i8;o;;i2;i4;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i3;0;@;	o;
+	;o;;i3;iA;o;;i3;i;@;@;T;"$carousel-indicator-border-color;[ ;o;	;@;i3;	o;
+	;o;;i3;i8;o;;i3;i4;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;i5;0;@;	o;
+	;o;;i5;iA;o;;i5;i;@;@;T;"carousel-caption-color;[ ;o;	;@;i5;	o;
+	;o;;i5;i8;o;;i5;i4;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;i8;#;$;@; ["/*== Close
+ *
+ *## */;[ o;;i<;0;@;	o;
+	;o;;i<;i1;o;;i<;i;@;@;T;"close-font-weight;[ ;o;	;@;i<;	o;
+	;o;;i<;i(;o;;i<;i$;@;@; o;<;#;=;@; "	boldo;;i=;0;@;	o;
+	;o;;i=;i1;o;;i=;i;@;@;T;"close-color;[ ;o;	;@;i=;	o;
+	;o;;i=;i(;o;;i=;i$;@;@; o;%	;@;&"	#000; 0;'{	;(i;)i ;*i ;+i o;;i>;0;@;	o;
+	;o;;i>;i9;o;;i>;i;@;@;T;"close-text-shadow;[ ;o;>;@;i>;@;	o;
+	;o;;i>;i1;o;;i>;i$;@;@;?;K;A[	o;	;@;i>;	o;
+	;o;;i>;i%;o;;i>;i$;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i>;	o;
+	;o;;i>;i);o;;i>;i&;@;@; o;2
+;@;3"1px;4[ ; i;5["pxo;	;@;i>;	o;
+	;o;;i>;i+;o;;i>;i*;@;@; o;2
+;@;3"0;4@I; i ;5[ o;	;@;i>;	o;
+	;o;;i>;i0;o;;i>;i,;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;"
+;iA;#;$;@; ["/*== Code
+ *
+ *## */;[ o;;iE;0;@;	o;
+	;o;;iE;i4;o;;iE;i;@;@;T;"code-color;[ ;o;	;@;iE;	o;
+	;o;;iE;i+;o;;iE;i$;@;@; o;%	;@;&"#c7254e; 0;'{	;(i;)iS;*i«;+i*o;;iF;0;@;	o;
+	;o;;iF;i4;o;;iF;i;@;@;T;"code-bg;[ ;o;	;@;iF;	o;
+	;o;;iF;i+;o;;iF;i$;@;@; o;%	;@;&"#f9f2f4; 0;'{	;(i;)iÙ;*i˘;+iÚo;;iH;0;@;	o;
+	;o;;iH;i1;o;;iH;i;@;@;T;"kbd-color;[ ;o;	;@;iH;	o;
+	;o;;iH;i(;o;;iH;i$;@;@; o;%	;@;&"	#fff; 0;'{	;(i;)iˇ;*iˇ;+iˇo;;iI;0;@;	o;
+	;o;;iI;i1;o;;iI;i;@;@;T;"kbd-bg;[ ;o;	;@;iI;	o;
+	;o;;iI;i(;o;;iI;i$;@;@; o;%	;@;&"	#333; 0;'{	;(i;)i8;*i8;+i8o;;iK;0;@;	o;
+	;o;;iK;i4;o;;iK;i;@;@;T;"pre-bg;[ ;o;	;@;iK;	o;
+	;o;;iK;i+;o;;iK;i$;@;@; o;%	;@;&"#f5f5f5; 0;'{	;(i;)iı;*iı;+iıo;;iL;0;@;	o;
+	;o;;iL;i7;o;;iL;i;@;@;T;"pre-color;[ ;o;0;@;iL;@;	o;
+	;o;;iL;i.;o;;iL;i$;@;@;"gray-dark;1"gray_darko;;iM;0;@;	o;
+	;o;;iM;i1;o;;iM;i;@;@;T;"pre-border-color;[ ;o;	;@;iM;	o;
+	;o;;iM;i(;o;;iM;i$;@;@; o;%	;@;&"	#ccc; 0;'{	;(i;)iÃ;*iÃ;+iÃo;;iN;0;@;	o;
+	;o;;iN;i2;o;;iN;i;@;@;T;"pre-scrollable-max-height;[ ;o;	;@;iN;	o;
+	;o;;iN;i);o;;iN;i$;@;@; o;2
+;@;3"
+340px;4[ ; iT;5["pxo;"
+;iQ;#;$;@; ["/*== Type
+ *
+ *## */;[ o;"
+;iU;#;$;@; ["3/*** Horizontal offset for forms and lists. */;[ o;;iV;0;@;	o;
+	;o;;iV;i2;o;;iV;i;@;@;T;" component-offset-horizontal;[ ;o;	;@;iV;	o;
+	;o;;iV;i);o;;iV;i$;@;@; o;2
+;@;3"
+180px;4[ ; i¥;5["pxo;"
+;iW;#;$;@; ["/*** Text muted color */;[ o;;iX;0;@;	o;
+	;o;;iX;i8;o;;iX;i;@;@;T;"text-muted;[ ;o;0;@;iX;@;	o;
+	;o;;iX;i/;o;;iX;i$;@;@;"gray-light;1"gray_lighto;"
+;iY;#;$;@; ["4/*** Abbreviations and acronyms border color */;[ o;;iZ;0;@;	o;
+	;o;;iZ;i8;o;;iZ;i;@;@;T;"abbr-border-color;[ ;o;0;@;iZ;@;	o;
+	;o;;iZ;i/;o;;iZ;i$;@;@;"gray-light;1"gray_lighto;"
+;i[;#;$;@; ["!/*** Headings small color */;[ o;;i\;0;@;	o;
+	;o;;i\;i8;o;;i\;i;@;@;T;"headings-small-color;[ ;o;0;@;i\;@;	o;
+	;o;;i\;i/;o;;i\;i$;@;@;"gray-light;1"gray_lighto;"
+;i];#;$;@; ["#/*** Blockquote small color */;[ o;;i^;0;@;	o;
+	;o;;i^;i8;o;;i^;i;@;@;T;"blockquote-small-color;[ ;o;0;@;i^;@;	o;
+	;o;;i^;i/;o;;i^;i$;@;@;"gray-light;1"gray_lighto;"
+;i_;#;$;@; ["!/*** Blockquote font size */;[ o;;i`;0;@;	o;
+	;o;;i`;iE;o;;i`;i;@;@;T;"blockquote-font-size;[ ;o;C;@;i`;@;	o;
+	;o;;i`;i;;o;;i`;i%;@;@;D;E;Fo;	;@;i`;	o;
+	;o;;i`;i;;o;;i`;i7;@;@; o;2
+;@;3"	1.25;4@I; f	1.25;5[ ;Go;0;@;i`;@;	o;
+	;o;;i`;i4;@¿;@;@;"font-size-base;1"font_size_baseo;"
+;ia;#;$;@; ["$/*** Blockquote border color */;[ o;;ib;0;@;	o;
+	;o;;ib;i:;o;;ib;i;@;@;T;"blockquote-border-color;[ ;o;0;@;ib;@;	o;
+	;o;;ib;i1;o;;ib;i$;@;@;"gray-lighter;1"gray_lightero;"
+;ic;#;$;@; ["%/*** Page header border color */;[ o;;id;0;@;	o;
+	;o;;id;i:;o;;id;i;@;@;T;"page-header-border-color;[ ;o;0;@;id;@;	o;
+	;o;;id;i1;o;;id;i$;@;@;"gray-lighter;1"gray_lightero;"
+;ie;#;$;@; ["8/*** Width of horizontal description list titles */;[ o;;if;0;@;	o;
+	;o;;if;iI;o;;if;i;@;@;T;"dl-horizontal-offset;[ ;o;0;@;if;@;	o;
+	;o;;if;i@;o;;if;i$;@;@;" component-offset-horizontal;1" component_offset_horizontalo;"
+;ig;#;$;@; ["=/*** Point at which .dl-horizontal becomes horizontal */;[ o;;ih;0;@;	o;
+	;o;;ih;iC;o;;ih;i;@;@;T;"dl-horizontal-breakpoint;[ ;o;0;@;ih;@;	o;
+	;o;;ih;i:;o;;ih;i$;@;@;"grid-float-breakpoint;1"grid_float_breakpointo;"
+;ii;#;$;@; ["#/*** Horizontal line color. */;[ o;;ij;0;@;	o;
+	;o;;ij;i:;o;;ij;i;@;@;T;"hr-border;[ ;o;0;@;ij;@;	o;
+	;o;;ij;i1;o;;ij;i$;@;@;"gray-lighter;1"gray_lighter
